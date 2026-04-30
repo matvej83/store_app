@@ -154,14 +154,6 @@ class AppRouter {
         path: Pages.login,
         builder: (context, state) => const LoginPage(),
       ),
-      // GoRoute(
-      //   path: Pages.addProduct,
-      //   builder: (context, state) => const AddProductPage(),
-      // ),
-      // GoRoute(
-      //   path: Pages.addCategory,
-      //   builder: (context, state) => const AddCategoryPage(),
-      // ),
     ],
   );
 }
