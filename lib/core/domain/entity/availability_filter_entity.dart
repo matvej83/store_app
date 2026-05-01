@@ -13,7 +13,7 @@ class AvailabilityFilterEntity extends Equatable {
   /// identifier - the name of concrete filter (inside group or independent)
   /// displayName - is displayed inside the filters list
   /// value - can be displayed after displayName. displayName (value)
-  /// apiValue - can me used as a filter for api calls
+  /// apiValue - can be used as a filter for api calls
   final String groupName;
   final String displayName;
   final String value;
