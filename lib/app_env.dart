@@ -1,7 +1,6 @@
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-
 class AppEnv {
-  static String get mode => dotenv.env['APP_MODE']!;
-
-  static String get baseUrl => dotenv.env['BASE_URL']!;
+  static String get baseUrl => const String.fromEnvironment(
+    'BASE_URL',
+    defaultValue: 'https://api.escuelajs.co/api/v1/',
+  );
 }

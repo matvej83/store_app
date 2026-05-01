@@ -9,7 +9,6 @@ import 'package:clean_architecture_test/navigation/router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'core/di/injection.dart';
 import 'core/services/auth_session_manager.dart';
@@ -20,7 +19,6 @@ import 'features/theme/cubit/cubit.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  await dotenv.load(fileName: '.env');
   await configureDependencies();
 
   runApp(
