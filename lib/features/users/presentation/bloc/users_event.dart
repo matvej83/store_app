@@ -9,5 +9,4 @@ class UsersEvent with _$UsersEvent {
   const factory UsersEvent.moreUsersLoaded() = MoreUsersLoaded;
 
   const factory UsersEvent.userFetched(String id) = UserFetched;
-
 }

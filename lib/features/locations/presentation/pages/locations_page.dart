@@ -103,9 +103,7 @@ class _LocationsPageState extends State<LocationsPage>
                   selectedIndex: _tabController.index,
                   useDifferentBorderForOuter: true,
                   onTap: (i) => _tabController.animateTo(i),
-                  barDecoration: const BoxDecoration(
-                    color: Colors.transparent,
-                  ),
+                  barDecoration: const BoxDecoration(color: Colors.transparent),
                   barPadding: const EdgeInsets.symmetric(vertical: 8.0),
                   buttonBorderRadius: 12.0,
                   buttonColor: theme.unselectedWidgetColor,

@@ -25,6 +25,15 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Check formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze Code
+        run: flutter analyze
+
+      - name: Run Tests
+        run: flutter test
+
       - name: Build Flutter Web
         run: flutter build web --release --base-href "/clean_architecture_test/"
 

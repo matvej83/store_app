@@ -9,10 +9,7 @@ import 'package:flutter/material.dart';
 ///
 /// This provider simplifies access to theme data and handles theme persistence.
 class ThemeProvider with ChangeNotifier {
-  ThemeProvider({
-    required this.cubit,
-    required this.repository,
-  }) {
+  ThemeProvider({required this.cubit, required this.repository}) {
     _loadTheme();
   }
 
