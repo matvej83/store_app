@@ -23,7 +23,7 @@ class ThemeCubit extends Cubit<ThemeState> {
         emit(
           state.copyWith(
             mode: AppThemeMode.dark,
-            theme: AppTheme.dark(AppColorSchemes.dark),
+            theme: AppTheme.dark(AppThemeColors.dark),
           ),
         );
       },
@@ -34,7 +34,7 @@ class ThemeCubit extends Cubit<ThemeState> {
           emit(
             state.copyWith(
               mode: AppThemeMode.dark,
-              theme: AppTheme.dark(AppColorSchemes.dark),
+              theme: AppTheme.dark(AppThemeColors.dark),
             ),
           );
         }
@@ -48,11 +48,9 @@ class ThemeCubit extends Cubit<ThemeState> {
   }
 
   ThemeData _mapToFlutter(AppThemeMode mode) {
-    switch (mode) {
-      case AppThemeMode.light:
-        return AppTheme.light(AppColorSchemes.light);
-      case AppThemeMode.dark:
-        return AppTheme.dark(AppColorSchemes.dark);
-    }
+    final colors = AppThemeColors.fromMode(mode);
+    return colors == AppThemeColors.light
+        ? AppTheme.light(colors)
+        : AppTheme.dark(colors);
   }
 }

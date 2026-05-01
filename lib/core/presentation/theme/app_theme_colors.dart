@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../features/theme/domain/entity/app_theme_mode.dart';
+
 class AppThemeColors {
   const AppThemeColors({
     required this.primary,
@@ -36,9 +38,16 @@ class AppThemeColors {
   final Color fieldBorderDisabled;
   final Color primaryText;
   final Color secondaryText;
-}
 
-class AppColorSchemes {
+  static AppThemeColors fromMode(AppThemeMode mode) {
+    switch (mode) {
+      case AppThemeMode.light:
+        return light;
+      case AppThemeMode.dark:
+        return dark;
+    }
+  }
+
   static final dark = AppThemeColors(
     primary: Colors.blue,
     onPrimary: Colors.white,
