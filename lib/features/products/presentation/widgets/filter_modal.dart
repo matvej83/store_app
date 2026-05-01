@@ -177,6 +177,7 @@ class _FilterModalState extends State<FilterModal> {
           decoration: BoxDecoration(
             color: theme.scaffoldBackgroundColor,
             borderRadius: BorderRadius.circular(12.0),
+            border: Border.all(color: theme.colorScheme.onPrimary),
           ),
           padding: const EdgeInsets.all(24.0),
           child: Column(

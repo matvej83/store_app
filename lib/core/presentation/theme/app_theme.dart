@@ -18,6 +18,14 @@ class AppTheme {
           surfaceTint: appColors.surfaceTint,
           error: appColors.error,
         ),
+        textTheme: TextTheme(
+          titleLarge: TextStyle(color: appColors.primaryText),
+          titleMedium: TextStyle(color: appColors.primaryText),
+          titleSmall: TextStyle(color: appColors.primaryText),
+          bodyLarge: TextStyle(color: appColors.secondaryText),
+          bodyMedium: TextStyle(color: appColors.secondaryText),
+          bodySmall: TextStyle(color: appColors.secondaryText),
+        ),
         appBarTheme: AppBarTheme(
           elevation: 0,
           surfaceTintColor: appColors.surfaceTint,
@@ -28,7 +36,7 @@ class AppTheme {
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           type: BottomNavigationBarType.fixed,
           backgroundColor: appColors.bottomBarBackground,
-          selectedItemColor: appColors.onPrimary,
+          selectedItemColor: appColors.primaryText,
           unselectedItemColor: appColors.unselectedWidget,
           showSelectedLabels: true,
           showUnselectedLabels: false,
@@ -187,6 +195,14 @@ class AppTheme {
           surfaceTint: appColors.surfaceTint,
           error: appColors.error,
         ),
+        textTheme: TextTheme(
+          titleLarge: TextStyle(color: appColors.primaryText),
+          titleMedium: TextStyle(color: appColors.primaryText),
+          titleSmall: TextStyle(color: appColors.primaryText),
+          bodyLarge: TextStyle(color: appColors.secondaryText),
+          bodyMedium: TextStyle(color: appColors.secondaryText),
+          bodySmall: TextStyle(color: appColors.secondaryText),
+        ),
         appBarTheme: AppBarTheme(
           elevation: 0,
           surfaceTintColor: appColors.surfaceTint,
@@ -196,7 +212,7 @@ class AppTheme {
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           type: BottomNavigationBarType.fixed,
           backgroundColor: appColors.bottomBarBackground,
-          selectedItemColor: appColors.onPrimary,
+          selectedItemColor: appColors.primaryText,
           unselectedItemColor: appColors.unselectedWidget,
           showSelectedLabels: true,
           showUnselectedLabels: false,

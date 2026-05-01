@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../features/theme/domain/entity/app_theme_mode.dart';
+
 class AppThemeColors {
   const AppThemeColors({
     required this.primary,
@@ -36,9 +38,16 @@ class AppThemeColors {
   final Color fieldBorderDisabled;
   final Color primaryText;
   final Color secondaryText;
-}
 
-class AppColorSchemes {
+  static AppThemeColors fromMode(AppThemeMode mode) {
+    switch (mode) {
+      case AppThemeMode.light:
+        return light;
+      case AppThemeMode.dark:
+        return dark;
+    }
+  }
+
   static final dark = AppThemeColors(
     primary: Colors.blue,
     onPrimary: Colors.white,
@@ -46,7 +55,7 @@ class AppColorSchemes {
     onError: Colors.white,
     success: Colors.green,
     scaffoldBackground: Colors.black,
-    unselectedWidget: Colors.grey.shade700,
+    unselectedWidget: Colors.grey.shade600,
     canvas: Colors.black,
     splash: Colors.black,
     surfaceTint: Colors.transparent,
@@ -54,8 +63,8 @@ class AppColorSchemes {
     fieldBorder: Colors.grey,
     fieldBorderFocussed: Colors.blue,
     fieldBorderDisabled: Colors.blueGrey,
-    primaryText: Colors.black,
-    secondaryText: Colors.grey.shade600,
+    primaryText: Colors.white,
+    secondaryText: Colors.grey.shade400,
   );
 
   static final light = AppThemeColors(
@@ -65,7 +74,7 @@ class AppColorSchemes {
     onError: Colors.white,
     success: Colors.green,
     scaffoldBackground: Colors.white,
-    unselectedWidget: Colors.grey.shade700,
+    unselectedWidget: Colors.grey.shade400,
     canvas: Colors.white,
     splash: Colors.white,
     surfaceTint: Colors.transparent,

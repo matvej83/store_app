@@ -26,9 +26,10 @@ class _UserPageState extends State<UserPage> {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
     return Container(
-      color: Colors.black,
+      color: theme.scaffoldBackgroundColor,
       child: BlocBuilder<UsersBloc, UsersState>(
         builder: (context, state) {
           return state.isUserLoading

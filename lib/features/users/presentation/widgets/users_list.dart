@@ -18,6 +18,7 @@ class UsersList extends StatelessWidget {
     final bloc = context.read<UsersBloc>();
     final state = context.watch<UsersBloc>().state;
     final authState = context.read<AuthBloc>().state;
+    final theme = Theme.of(context);
     return ListView.separated(
       itemCount: state.users.length,
       physics: const ClampingScrollPhysics(),
@@ -40,8 +41,11 @@ class UsersList extends StatelessWidget {
 
         return const Center(child: CircularProgressIndicator());
       },
-      separatorBuilder: (context, index) =>
-          const Divider(height: 16.0, thickness: 1.0, color: Colors.white70),
+      separatorBuilder: (context, index) => Divider(
+        height: 16.0,
+        thickness: 1.0,
+        color: theme.unselectedWidgetColor,
+      ),
     );
   }
 }
