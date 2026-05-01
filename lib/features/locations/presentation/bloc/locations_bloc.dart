@@ -170,4 +170,3 @@ class LocationsBloc extends Bloc<LocationsEvent, LocationsState>
     }
   }
 }
-
