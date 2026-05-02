@@ -16,6 +16,7 @@ class ThemeSelector extends StatefulWidget {
 class _ThemeSelectorState extends State<ThemeSelector> {
   late ThemeCubit cubit;
   late AppThemeMode initialValue;
+  late TextTheme textTheme;
 
   @override
   void didChangeDependencies() {
@@ -23,6 +24,7 @@ class _ThemeSelectorState extends State<ThemeSelector> {
     cubit = context.read<ThemeCubit>();
     final state = context.watch<ThemeCubit>().state;
     initialValue = state.mode;
+    textTheme = Theme.of(context).textTheme;
   }
 
   @override
@@ -41,10 +43,18 @@ class _ThemeSelectorState extends State<ThemeSelector> {
         DropdownMenuEntry<AppThemeMode>(
           value: AppThemeMode.dark,
           label: 'profileScreen.themeDark'.tr(),
+          labelWidget: Text(
+            'profileScreen.themeDark'.tr(),
+            style: textTheme.bodyMedium,
+          ),
         ),
         DropdownMenuEntry<AppThemeMode>(
           value: AppThemeMode.light,
           label: 'profileScreen.themeLight'.tr(),
+          labelWidget: Text(
+            'profileScreen.themeLight'.tr(),
+            style: textTheme.bodyMedium,
+          ),
         ),
       ],
     );

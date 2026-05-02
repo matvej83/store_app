@@ -14,12 +14,14 @@ class LanguageSelector extends StatefulWidget {
 class _LanguageSelectorState extends State<LanguageSelector> {
   late String dropdownValue;
   late String initialValue;
+  late TextTheme textTheme;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     initialValue = context.locale.languageCode;
     dropdownValue = initialValue;
+    textTheme = Theme.of(context).textTheme;
   }
 
   @override
@@ -44,11 +46,19 @@ class _LanguageSelectorState extends State<LanguageSelector> {
           value: 'en',
           label: 'profileScreen.langEn'.tr(),
           leadingIcon: ProfileUtils.getLanguageIcon('en'),
+          labelWidget: Text(
+            'profileScreen.langEn'.tr(),
+            style: textTheme.bodyMedium,
+          ),
         ),
         DropdownMenuEntry<String>(
           value: 'ru',
           label: 'profileScreen.langRu'.tr(),
           leadingIcon: ProfileUtils.getLanguageIcon('ru'),
+          labelWidget: Text(
+            'profileScreen.langRu'.tr(),
+            style: textTheme.bodyMedium,
+          ),
         ),
       ],
     );
