@@ -29,7 +29,7 @@ class _ProductsPageState extends State<ProductsPage> {
     if (ProductsUtils.isBottom(_scrollController)) {
       bloc.add(const NextProductsFetched());
     }
-    _showScrollUp.value = _scrollController.position.pixels > 280;
+    _showScrollUp.value = _scrollController.position.pixels > 280.0;
   }
 
   @override
@@ -42,6 +42,7 @@ class _ProductsPageState extends State<ProductsPage> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _showScrollUp.dispose();
     super.dispose();
   }
 

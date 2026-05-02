@@ -5,36 +5,81 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LocationsList extends StatelessWidget {
+import '../../../../core/presentation/widgets/scroll_up_button.dart';
+
+class LocationsList extends StatefulWidget {
   const LocationsList({super.key});
 
   @override
+  State<LocationsList> createState() => _LocationsListState();
+}
+
+class _LocationsListState extends State<LocationsList> {
+  late LocationsBloc bloc;
+  final _scrollController = ScrollController();
+  final _showScrollUp = ValueNotifier<bool>(false);
+
+  void _onScroll() {
+    _showScrollUp.value = _scrollController.position.pixels > 280.0;
+  }
+
+  @override
+  void initState() {
+    _scrollController.addListener(_onScroll);
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    bloc = context.read<LocationsBloc>();
+    super.didChangeDependencies();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    _showScrollUp.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final bloc = context.read<LocationsBloc>();
     final state = context.watch<LocationsBloc>().state;
-    return ListView.separated(
-      itemCount: state.locations.length,
-      physics: const ClampingScrollPhysics(),
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
-      itemBuilder: (context, index) {
-        final location = state.locations[index];
-        final isSelected = location.id == state.selectedLocationId;
-        return ListItem(
-          key: ValueKey(location.id),
-          isSelected: isSelected,
-          onTap: () {
-            if (isSelected) {
-              bloc.add(const LocationSelected(locationId: ''));
-            } else {
-              bloc.add(
-                LocationSelected(locationId: location.id, location: location),
-              );
-            }
+    return Stack(
+      children: [
+        ListView.separated(
+          controller: _scrollController,
+          itemCount: state.locations.length,
+          physics: const ClampingScrollPhysics(),
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          itemBuilder: (context, index) {
+            final location = state.locations[index];
+            final isSelected = location.id == state.selectedLocationId;
+            return ListItem(
+              key: ValueKey(location.id),
+              isSelected: isSelected,
+              onTap: () {
+                if (isSelected) {
+                  bloc.add(const LocationSelected(locationId: ''));
+                } else {
+                  bloc.add(
+                    LocationSelected(
+                      locationId: location.id,
+                      location: location,
+                    ),
+                  );
+                }
+              },
+              location: location,
+            );
           },
-          location: location,
-        );
-      },
-      separatorBuilder: (context, index) => const SizedBox(height: 8.0),
+          separatorBuilder: (context, index) => const SizedBox(height: 8.0),
+        ),
+        ScrollUpButton(
+          showScrollUp: _showScrollUp,
+          scrollController: _scrollController,
+        ),
+      ],
     );
   }
 }
