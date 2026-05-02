@@ -141,7 +141,7 @@ class AppTheme {
             backgroundColor: appColors.primary,
             disabledBackgroundColor: appColors.unselectedWidget,
             foregroundColor: appColors.onPrimary,
-            disabledForegroundColor: appColors.fieldBorderDisabled,
+            disabledForegroundColor: appColors.secondaryText,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.0),
             ),
@@ -327,7 +327,7 @@ class AppTheme {
             backgroundColor: appColors.primary,
             disabledBackgroundColor: appColors.unselectedWidget,
             foregroundColor: appColors.onPrimary,
-            disabledForegroundColor: appColors.fieldBorderDisabled,
+            disabledForegroundColor: appColors.secondaryText,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.0),
             ),

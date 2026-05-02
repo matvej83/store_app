@@ -95,9 +95,11 @@ class _ProductsPageState extends State<ProductsPage> {
                                   onTap: () {
                                     showDialog(
                                       context: context,
-                                      builder: (context) => const Material(
-                                        color: Colors.transparent,
-                                        child: Center(
+                                      fullscreenDialog: true,
+                                      builder: (context) => const Scaffold(
+                                        backgroundColor: Colors.transparent,
+                                        resizeToAvoidBottomInset: true,
+                                        body: Center(
                                           child: Padding(
                                             padding: EdgeInsets.symmetric(
                                               horizontal: 16.0,
