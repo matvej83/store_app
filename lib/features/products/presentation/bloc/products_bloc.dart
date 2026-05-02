@@ -114,7 +114,7 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
     NextProductsFetched event,
     Emitter<ProductsState> emit,
   ) async {
-    if (state.hasReachedMaxProducts) return;
+    if (state.hasReachedMaxProducts || state.isShowProductLoader) return;
     emit(state.copyWith(isShowProductLoader: true));
 
     final (min, max) = ProductsUtils.getPriceFilters(state.filters);

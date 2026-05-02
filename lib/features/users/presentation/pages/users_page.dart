@@ -14,10 +14,18 @@ class UsersPage extends StatefulWidget {
 }
 
 class _UsersPageState extends State<UsersPage> {
+  final _scrollController = ScrollController();
+
   @override
   void initState() {
     context.read<UsersBloc>().add(const UsersFetched());
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -26,7 +34,7 @@ class _UsersPageState extends State<UsersPage> {
       builder: (context, state) {
         return state.isLoading
             ? const Center(child: CircularProgressIndicator())
-            : const UsersList();
+            : UsersList(scrollController: _scrollController);
       },
     );
   }

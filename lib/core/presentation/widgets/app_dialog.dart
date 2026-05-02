@@ -20,14 +20,24 @@ class AppDialog {
           TextButton(
             style: TextButton.styleFrom(backgroundColor: Colors.grey),
             onPressed: () => context.pop(false),
-            child: Text(cancelText, style: textTheme.bodyLarge),
+            child: Text(
+              cancelText,
+              style: textTheme.bodyLarge?.copyWith(
+                color: theme.colorScheme.onPrimary,
+              ),
+            ),
           ),
           TextButton(
             style: TextButton.styleFrom(
               backgroundColor: theme.colorScheme.error,
             ),
             onPressed: () => context.pop(true),
-            child: Text(okText, style: textTheme.bodyLarge),
+            child: Text(
+              okText,
+              style: textTheme.bodyLarge?.copyWith(
+                color: theme.colorScheme.onPrimary,
+              ),
+            ),
           ),
         ],
       ),

@@ -25,6 +25,9 @@ class AppTheme {
           bodyLarge: TextStyle(color: appColors.secondaryText),
           bodyMedium: TextStyle(color: appColors.secondaryText),
           bodySmall: TextStyle(color: appColors.secondaryText),
+          labelLarge: TextStyle(color: appColors.secondaryText),
+          labelMedium: TextStyle(color: appColors.secondaryText),
+          labelSmall: TextStyle(color: appColors.secondaryText),
         ),
         appBarTheme: AppBarTheme(
           elevation: 0,
@@ -93,6 +96,13 @@ class AppTheme {
             return TextStyle(color: appColors.unselectedWidget);
           }),
         ),
+        menuButtonTheme: MenuButtonThemeData(
+          style: ButtonStyle(
+            textStyle: WidgetStateProperty.all(
+              TextStyle(color: appColors.secondaryText),
+            ),
+          ),
+        ),
         dropdownMenuTheme: DropdownMenuThemeData(
           inputDecorationTheme: InputDecorationTheme(
             border: OutlineInputBorder(
@@ -131,7 +141,7 @@ class AppTheme {
             backgroundColor: appColors.primary,
             disabledBackgroundColor: appColors.unselectedWidget,
             foregroundColor: appColors.onPrimary,
-            disabledForegroundColor: appColors.fieldBorderDisabled,
+            disabledForegroundColor: appColors.secondaryText,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.0),
             ),
@@ -202,6 +212,9 @@ class AppTheme {
           bodyLarge: TextStyle(color: appColors.secondaryText),
           bodyMedium: TextStyle(color: appColors.secondaryText),
           bodySmall: TextStyle(color: appColors.secondaryText),
+          labelLarge: TextStyle(color: appColors.secondaryText),
+          labelMedium: TextStyle(color: appColors.secondaryText),
+          labelSmall: TextStyle(color: appColors.secondaryText),
         ),
         appBarTheme: AppBarTheme(
           elevation: 0,
@@ -269,6 +282,13 @@ class AppTheme {
             return const TextStyle(color: Colors.grey);
           }),
         ),
+        menuButtonTheme: MenuButtonThemeData(
+          style: ButtonStyle(
+            textStyle: WidgetStateProperty.all(
+              TextStyle(color: appColors.secondaryText),
+            ),
+          ),
+        ),
         dropdownMenuTheme: DropdownMenuThemeData(
           inputDecorationTheme: InputDecorationTheme(
             border: OutlineInputBorder(
@@ -307,7 +327,7 @@ class AppTheme {
             backgroundColor: appColors.primary,
             disabledBackgroundColor: appColors.unselectedWidget,
             foregroundColor: appColors.onPrimary,
-            disabledForegroundColor: appColors.fieldBorderDisabled,
+            disabledForegroundColor: appColors.secondaryText,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.0),
             ),
