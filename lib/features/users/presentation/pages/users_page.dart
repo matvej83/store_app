@@ -15,23 +15,16 @@ class UsersPage extends StatefulWidget {
 
 class _UsersPageState extends State<UsersPage> {
   final _scrollController = ScrollController();
-  final _showScrollUp = ValueNotifier<bool>(false);
-
-  void _onScroll() {
-    _showScrollUp.value = _scrollController.position.pixels > 280.0;
-  }
 
   @override
   void initState() {
     context.read<UsersBloc>().add(const UsersFetched());
-    _scrollController.addListener(_onScroll);
     super.initState();
   }
 
   @override
   void dispose() {
     _scrollController.dispose();
-    _showScrollUp.dispose();
     super.dispose();
   }
 
@@ -41,10 +34,7 @@ class _UsersPageState extends State<UsersPage> {
       builder: (context, state) {
         return state.isLoading
             ? const Center(child: CircularProgressIndicator())
-            : UsersList(
-                scrollController: _scrollController,
-                showScrollUp: _showScrollUp,
-              );
+            : UsersList(scrollController: _scrollController);
       },
     );
   }

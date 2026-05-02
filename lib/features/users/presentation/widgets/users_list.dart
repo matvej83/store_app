@@ -1,3 +1,4 @@
+import 'package:clean_architecture_test/core/presentation/widgets/scroll_up_wrapper.dart';
 import 'package:clean_architecture_test/features/auth/domain/entity/user_entity.dart';
 import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:clean_architecture_test/features/auth/presentation/widgets/user_avatar.dart';
@@ -8,18 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/presentation/widgets/scroll_up_button.dart';
 import '../../../../navigation/pages.dart';
 
 class UsersList extends StatelessWidget {
-  const UsersList({
-    super.key,
-    required this.scrollController,
-    required this.showScrollUp,
-  });
+  const UsersList({super.key, required this.scrollController});
 
   final ScrollController scrollController;
-  final ValueNotifier<bool> showScrollUp;
 
   @override
   Widget build(BuildContext context) {
@@ -27,42 +22,37 @@ class UsersList extends StatelessWidget {
     final theme = Theme.of(context);
     final state = context.watch<UsersBloc>().state;
     final authState = context.read<AuthBloc>().state;
-    return Stack(
-      children: [
-        ListView.separated(
-          controller: scrollController,
-          itemCount: state.users.length,
-          physics: const ClampingScrollPhysics(),
-          padding: const EdgeInsets.symmetric(vertical: 16.0),
-          itemBuilder: (context, index) {
-            final user = state.users[index];
-            if (index >= state.users.length - 5) {
-              bloc.add(const MoreUsersLoaded());
-            }
-            if (index < state.users.length) {
-              return ListItem(
-                key: ValueKey(user.id),
-                areYou: authState.user?.id == user.id,
-                onTap: () {
-                  context.go('${Pages.users}/${user.id}');
-                },
-                user: user,
-              );
-            }
+    return ScrollUpWrapper(
+      controller: scrollController,
+      child: ListView.separated(
+        controller: scrollController,
+        itemCount: state.users.length,
+        physics: const ClampingScrollPhysics(),
+        padding: const EdgeInsets.symmetric(vertical: 16.0),
+        itemBuilder: (context, index) {
+          final user = state.users[index];
+          if (index >= state.users.length - 5) {
+            bloc.add(const MoreUsersLoaded());
+          }
+          if (index < state.users.length) {
+            return ListItem(
+              key: ValueKey(user.id),
+              areYou: authState.user?.id == user.id,
+              onTap: () {
+                context.go('${Pages.users}/${user.id}');
+              },
+              user: user,
+            );
+          }
 
-            return const Center(child: CircularProgressIndicator());
-          },
-          separatorBuilder: (context, index) => Divider(
-            height: 16.0,
-            thickness: 1.0,
-            color: theme.unselectedWidgetColor,
-          ),
+          return const Center(child: CircularProgressIndicator());
+        },
+        separatorBuilder: (context, index) => Divider(
+          height: 16.0,
+          thickness: 1.0,
+          color: theme.unselectedWidgetColor,
         ),
-        ScrollUpButton(
-          showScrollUp: showScrollUp,
-          scrollController: scrollController,
-        ),
-      ],
+      ),
     );
   }
 }
