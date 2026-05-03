@@ -10,7 +10,8 @@ class CarouselSliderItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
     return image != null
         ? Stack(
             alignment: AlignmentDirectional.bottomCenter,
@@ -31,7 +32,9 @@ class CarouselSliderItem extends StatelessWidget {
                     ),
                     child: Text(
                       '${current! + 1} / $total',
-                      style: textTheme.bodyMedium,
+                      style: textTheme.bodyMedium?.copyWith(
+                        color: theme.colorScheme.onPrimary,
+                      ),
                     ),
                   ),
                 ),
