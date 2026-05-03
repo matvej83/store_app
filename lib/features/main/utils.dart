@@ -38,7 +38,7 @@ class MainScreenUtils {
 
   static Widget? getFAB(
     BuildContext context, {
-    required VoidCallback action,
+    required VoidCallback locationAction,
     required GoRouterState state,
   }) {
     final location = state.uri.path;
@@ -55,7 +55,7 @@ class MainScreenUtils {
       Pages.locations =>
         kIsWeb
             ? FloatingActionButton(
-                onPressed: action,
+                onPressed: locationAction,
                 child: const Icon(Icons.location_searching),
               )
             : null,

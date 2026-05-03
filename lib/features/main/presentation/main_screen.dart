@@ -76,7 +76,7 @@ class _MainScreenState extends State<MainScreen> {
         child: MainScreenUtils.getFAB(
           context,
           state: widget.state,
-          action: () async {
+          locationAction: () async {
             final granted = await geolocationService.requestPermission();
 
             if (granted) {

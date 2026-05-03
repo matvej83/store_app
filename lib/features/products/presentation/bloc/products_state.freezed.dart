@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 mixin _$ProductsState {
 
  bool get isLoading; bool get isProductLoading;/// pagination
- bool get isShowProductLoader; bool get hasReachedMaxProducts; bool get createdSuccessful; bool get isCreating; String? get error; String? get search; List<ProductEntity> get products; List<ProductEntity> get relatedById; ProductEntity? get product; List<CategoryEntity> get categories; String get selectedCategoryId; String get createdProductCategoryId; List<AppImageEntity>? get pickedImages; List<String>? get uploadedImages; List<AvailabilityFilterEntity> get filters;
+ bool get isShowProductLoader; bool get hasReachedMaxProducts; bool get createdSuccessful; bool get isCreating; String? get error; String? get search; String? get searchCategory; String? get innerSearchCategory; List<ProductEntity> get products; List<ProductEntity> get relatedById; ProductEntity? get product; List<CategoryEntity> get categories; List<CategoryEntity> get categorySearchResults; List<CategoryEntity> get innerCategorySearchResults; String get selectedCategoryId; String get createdProductCategoryId; List<AppImageEntity>? get pickedImages; List<String>? get uploadedImages; List<AvailabilityFilterEntity> get filters;
 /// Create a copy of ProductsState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -26,16 +26,16 @@ $ProductsStateCopyWith<ProductsState> get copyWith => _$ProductsStateCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductsState&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.isProductLoading, isProductLoading) || other.isProductLoading == isProductLoading)&&(identical(other.isShowProductLoader, isShowProductLoader) || other.isShowProductLoader == isShowProductLoader)&&(identical(other.hasReachedMaxProducts, hasReachedMaxProducts) || other.hasReachedMaxProducts == hasReachedMaxProducts)&&(identical(other.createdSuccessful, createdSuccessful) || other.createdSuccessful == createdSuccessful)&&(identical(other.isCreating, isCreating) || other.isCreating == isCreating)&&(identical(other.error, error) || other.error == error)&&(identical(other.search, search) || other.search == search)&&const DeepCollectionEquality().equals(other.products, products)&&const DeepCollectionEquality().equals(other.relatedById, relatedById)&&(identical(other.product, product) || other.product == product)&&const DeepCollectionEquality().equals(other.categories, categories)&&(identical(other.selectedCategoryId, selectedCategoryId) || other.selectedCategoryId == selectedCategoryId)&&(identical(other.createdProductCategoryId, createdProductCategoryId) || other.createdProductCategoryId == createdProductCategoryId)&&const DeepCollectionEquality().equals(other.pickedImages, pickedImages)&&const DeepCollectionEquality().equals(other.uploadedImages, uploadedImages)&&const DeepCollectionEquality().equals(other.filters, filters));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductsState&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.isProductLoading, isProductLoading) || other.isProductLoading == isProductLoading)&&(identical(other.isShowProductLoader, isShowProductLoader) || other.isShowProductLoader == isShowProductLoader)&&(identical(other.hasReachedMaxProducts, hasReachedMaxProducts) || other.hasReachedMaxProducts == hasReachedMaxProducts)&&(identical(other.createdSuccessful, createdSuccessful) || other.createdSuccessful == createdSuccessful)&&(identical(other.isCreating, isCreating) || other.isCreating == isCreating)&&(identical(other.error, error) || other.error == error)&&(identical(other.search, search) || other.search == search)&&(identical(other.searchCategory, searchCategory) || other.searchCategory == searchCategory)&&(identical(other.innerSearchCategory, innerSearchCategory) || other.innerSearchCategory == innerSearchCategory)&&const DeepCollectionEquality().equals(other.products, products)&&const DeepCollectionEquality().equals(other.relatedById, relatedById)&&(identical(other.product, product) || other.product == product)&&const DeepCollectionEquality().equals(other.categories, categories)&&const DeepCollectionEquality().equals(other.categorySearchResults, categorySearchResults)&&const DeepCollectionEquality().equals(other.innerCategorySearchResults, innerCategorySearchResults)&&(identical(other.selectedCategoryId, selectedCategoryId) || other.selectedCategoryId == selectedCategoryId)&&(identical(other.createdProductCategoryId, createdProductCategoryId) || other.createdProductCategoryId == createdProductCategoryId)&&const DeepCollectionEquality().equals(other.pickedImages, pickedImages)&&const DeepCollectionEquality().equals(other.uploadedImages, uploadedImages)&&const DeepCollectionEquality().equals(other.filters, filters));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,isLoading,isProductLoading,isShowProductLoader,hasReachedMaxProducts,createdSuccessful,isCreating,error,search,const DeepCollectionEquality().hash(products),const DeepCollectionEquality().hash(relatedById),product,const DeepCollectionEquality().hash(categories),selectedCategoryId,createdProductCategoryId,const DeepCollectionEquality().hash(pickedImages),const DeepCollectionEquality().hash(uploadedImages),const DeepCollectionEquality().hash(filters));
+int get hashCode => Object.hashAll([runtimeType,isLoading,isProductLoading,isShowProductLoader,hasReachedMaxProducts,createdSuccessful,isCreating,error,search,searchCategory,innerSearchCategory,const DeepCollectionEquality().hash(products),const DeepCollectionEquality().hash(relatedById),product,const DeepCollectionEquality().hash(categories),const DeepCollectionEquality().hash(categorySearchResults),const DeepCollectionEquality().hash(innerCategorySearchResults),selectedCategoryId,createdProductCategoryId,const DeepCollectionEquality().hash(pickedImages),const DeepCollectionEquality().hash(uploadedImages),const DeepCollectionEquality().hash(filters)]);
 
 @override
 String toString() {
-  return 'ProductsState(isLoading: $isLoading, isProductLoading: $isProductLoading, isShowProductLoader: $isShowProductLoader, hasReachedMaxProducts: $hasReachedMaxProducts, createdSuccessful: $createdSuccessful, isCreating: $isCreating, error: $error, search: $search, products: $products, relatedById: $relatedById, product: $product, categories: $categories, selectedCategoryId: $selectedCategoryId, createdProductCategoryId: $createdProductCategoryId, pickedImages: $pickedImages, uploadedImages: $uploadedImages, filters: $filters)';
+  return 'ProductsState(isLoading: $isLoading, isProductLoading: $isProductLoading, isShowProductLoader: $isShowProductLoader, hasReachedMaxProducts: $hasReachedMaxProducts, createdSuccessful: $createdSuccessful, isCreating: $isCreating, error: $error, search: $search, searchCategory: $searchCategory, innerSearchCategory: $innerSearchCategory, products: $products, relatedById: $relatedById, product: $product, categories: $categories, categorySearchResults: $categorySearchResults, innerCategorySearchResults: $innerCategorySearchResults, selectedCategoryId: $selectedCategoryId, createdProductCategoryId: $createdProductCategoryId, pickedImages: $pickedImages, uploadedImages: $uploadedImages, filters: $filters)';
 }
 
 
@@ -46,7 +46,7 @@ abstract mixin class $ProductsStateCopyWith<$Res>  {
   factory $ProductsStateCopyWith(ProductsState value, $Res Function(ProductsState) _then) = _$ProductsStateCopyWithImpl;
 @useResult
 $Res call({
- bool isLoading, bool isProductLoading, bool isShowProductLoader, bool hasReachedMaxProducts, bool createdSuccessful, bool isCreating, String? error, String? search, List<ProductEntity> products, List<ProductEntity> relatedById, ProductEntity? product, List<CategoryEntity> categories, String selectedCategoryId, String createdProductCategoryId, List<AppImageEntity>? pickedImages, List<String>? uploadedImages, List<AvailabilityFilterEntity> filters
+ bool isLoading, bool isProductLoading, bool isShowProductLoader, bool hasReachedMaxProducts, bool createdSuccessful, bool isCreating, String? error, String? search, String? searchCategory, String? innerSearchCategory, List<ProductEntity> products, List<ProductEntity> relatedById, ProductEntity? product, List<CategoryEntity> categories, List<CategoryEntity> categorySearchResults, List<CategoryEntity> innerCategorySearchResults, String selectedCategoryId, String createdProductCategoryId, List<AppImageEntity>? pickedImages, List<String>? uploadedImages, List<AvailabilityFilterEntity> filters
 });
 
 
@@ -63,7 +63,7 @@ class _$ProductsStateCopyWithImpl<$Res>
 
 /// Create a copy of ProductsState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? isLoading = null,Object? isProductLoading = null,Object? isShowProductLoader = null,Object? hasReachedMaxProducts = null,Object? createdSuccessful = null,Object? isCreating = null,Object? error = freezed,Object? search = freezed,Object? products = null,Object? relatedById = null,Object? product = freezed,Object? categories = null,Object? selectedCategoryId = null,Object? createdProductCategoryId = null,Object? pickedImages = freezed,Object? uploadedImages = freezed,Object? filters = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? isLoading = null,Object? isProductLoading = null,Object? isShowProductLoader = null,Object? hasReachedMaxProducts = null,Object? createdSuccessful = null,Object? isCreating = null,Object? error = freezed,Object? search = freezed,Object? searchCategory = freezed,Object? innerSearchCategory = freezed,Object? products = null,Object? relatedById = null,Object? product = freezed,Object? categories = null,Object? categorySearchResults = null,Object? innerCategorySearchResults = null,Object? selectedCategoryId = null,Object? createdProductCategoryId = null,Object? pickedImages = freezed,Object? uploadedImages = freezed,Object? filters = null,}) {
   return _then(_self.copyWith(
 isLoading: null == isLoading ? _self.isLoading : isLoading // ignore: cast_nullable_to_non_nullable
 as bool,isProductLoading: null == isProductLoading ? _self.isProductLoading : isProductLoading // ignore: cast_nullable_to_non_nullable
@@ -73,10 +73,14 @@ as bool,createdSuccessful: null == createdSuccessful ? _self.createdSuccessful :
 as bool,isCreating: null == isCreating ? _self.isCreating : isCreating // ignore: cast_nullable_to_non_nullable
 as bool,error: freezed == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
 as String?,search: freezed == search ? _self.search : search // ignore: cast_nullable_to_non_nullable
+as String?,searchCategory: freezed == searchCategory ? _self.searchCategory : searchCategory // ignore: cast_nullable_to_non_nullable
+as String?,innerSearchCategory: freezed == innerSearchCategory ? _self.innerSearchCategory : innerSearchCategory // ignore: cast_nullable_to_non_nullable
 as String?,products: null == products ? _self.products : products // ignore: cast_nullable_to_non_nullable
 as List<ProductEntity>,relatedById: null == relatedById ? _self.relatedById : relatedById // ignore: cast_nullable_to_non_nullable
 as List<ProductEntity>,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as ProductEntity?,categories: null == categories ? _self.categories : categories // ignore: cast_nullable_to_non_nullable
+as List<CategoryEntity>,categorySearchResults: null == categorySearchResults ? _self.categorySearchResults : categorySearchResults // ignore: cast_nullable_to_non_nullable
+as List<CategoryEntity>,innerCategorySearchResults: null == innerCategorySearchResults ? _self.innerCategorySearchResults : innerCategorySearchResults // ignore: cast_nullable_to_non_nullable
 as List<CategoryEntity>,selectedCategoryId: null == selectedCategoryId ? _self.selectedCategoryId : selectedCategoryId // ignore: cast_nullable_to_non_nullable
 as String,createdProductCategoryId: null == createdProductCategoryId ? _self.createdProductCategoryId : createdProductCategoryId // ignore: cast_nullable_to_non_nullable
 as String,pickedImages: freezed == pickedImages ? _self.pickedImages : pickedImages // ignore: cast_nullable_to_non_nullable
@@ -167,10 +171,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool isLoading,  bool isProductLoading,  bool isShowProductLoader,  bool hasReachedMaxProducts,  bool createdSuccessful,  bool isCreating,  String? error,  String? search,  List<ProductEntity> products,  List<ProductEntity> relatedById,  ProductEntity? product,  List<CategoryEntity> categories,  String selectedCategoryId,  String createdProductCategoryId,  List<AppImageEntity>? pickedImages,  List<String>? uploadedImages,  List<AvailabilityFilterEntity> filters)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool isLoading,  bool isProductLoading,  bool isShowProductLoader,  bool hasReachedMaxProducts,  bool createdSuccessful,  bool isCreating,  String? error,  String? search,  String? searchCategory,  String? innerSearchCategory,  List<ProductEntity> products,  List<ProductEntity> relatedById,  ProductEntity? product,  List<CategoryEntity> categories,  List<CategoryEntity> categorySearchResults,  List<CategoryEntity> innerCategorySearchResults,  String selectedCategoryId,  String createdProductCategoryId,  List<AppImageEntity>? pickedImages,  List<String>? uploadedImages,  List<AvailabilityFilterEntity> filters)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ProductsState() when $default != null:
-return $default(_that.isLoading,_that.isProductLoading,_that.isShowProductLoader,_that.hasReachedMaxProducts,_that.createdSuccessful,_that.isCreating,_that.error,_that.search,_that.products,_that.relatedById,_that.product,_that.categories,_that.selectedCategoryId,_that.createdProductCategoryId,_that.pickedImages,_that.uploadedImages,_that.filters);case _:
+return $default(_that.isLoading,_that.isProductLoading,_that.isShowProductLoader,_that.hasReachedMaxProducts,_that.createdSuccessful,_that.isCreating,_that.error,_that.search,_that.searchCategory,_that.innerSearchCategory,_that.products,_that.relatedById,_that.product,_that.categories,_that.categorySearchResults,_that.innerCategorySearchResults,_that.selectedCategoryId,_that.createdProductCategoryId,_that.pickedImages,_that.uploadedImages,_that.filters);case _:
   return orElse();
 
 }
@@ -188,10 +192,10 @@ return $default(_that.isLoading,_that.isProductLoading,_that.isShowProductLoader
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool isLoading,  bool isProductLoading,  bool isShowProductLoader,  bool hasReachedMaxProducts,  bool createdSuccessful,  bool isCreating,  String? error,  String? search,  List<ProductEntity> products,  List<ProductEntity> relatedById,  ProductEntity? product,  List<CategoryEntity> categories,  String selectedCategoryId,  String createdProductCategoryId,  List<AppImageEntity>? pickedImages,  List<String>? uploadedImages,  List<AvailabilityFilterEntity> filters)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool isLoading,  bool isProductLoading,  bool isShowProductLoader,  bool hasReachedMaxProducts,  bool createdSuccessful,  bool isCreating,  String? error,  String? search,  String? searchCategory,  String? innerSearchCategory,  List<ProductEntity> products,  List<ProductEntity> relatedById,  ProductEntity? product,  List<CategoryEntity> categories,  List<CategoryEntity> categorySearchResults,  List<CategoryEntity> innerCategorySearchResults,  String selectedCategoryId,  String createdProductCategoryId,  List<AppImageEntity>? pickedImages,  List<String>? uploadedImages,  List<AvailabilityFilterEntity> filters)  $default,) {final _that = this;
 switch (_that) {
 case _ProductsState():
-return $default(_that.isLoading,_that.isProductLoading,_that.isShowProductLoader,_that.hasReachedMaxProducts,_that.createdSuccessful,_that.isCreating,_that.error,_that.search,_that.products,_that.relatedById,_that.product,_that.categories,_that.selectedCategoryId,_that.createdProductCategoryId,_that.pickedImages,_that.uploadedImages,_that.filters);case _:
+return $default(_that.isLoading,_that.isProductLoading,_that.isShowProductLoader,_that.hasReachedMaxProducts,_that.createdSuccessful,_that.isCreating,_that.error,_that.search,_that.searchCategory,_that.innerSearchCategory,_that.products,_that.relatedById,_that.product,_that.categories,_that.categorySearchResults,_that.innerCategorySearchResults,_that.selectedCategoryId,_that.createdProductCategoryId,_that.pickedImages,_that.uploadedImages,_that.filters);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -208,10 +212,10 @@ return $default(_that.isLoading,_that.isProductLoading,_that.isShowProductLoader
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool isLoading,  bool isProductLoading,  bool isShowProductLoader,  bool hasReachedMaxProducts,  bool createdSuccessful,  bool isCreating,  String? error,  String? search,  List<ProductEntity> products,  List<ProductEntity> relatedById,  ProductEntity? product,  List<CategoryEntity> categories,  String selectedCategoryId,  String createdProductCategoryId,  List<AppImageEntity>? pickedImages,  List<String>? uploadedImages,  List<AvailabilityFilterEntity> filters)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool isLoading,  bool isProductLoading,  bool isShowProductLoader,  bool hasReachedMaxProducts,  bool createdSuccessful,  bool isCreating,  String? error,  String? search,  String? searchCategory,  String? innerSearchCategory,  List<ProductEntity> products,  List<ProductEntity> relatedById,  ProductEntity? product,  List<CategoryEntity> categories,  List<CategoryEntity> categorySearchResults,  List<CategoryEntity> innerCategorySearchResults,  String selectedCategoryId,  String createdProductCategoryId,  List<AppImageEntity>? pickedImages,  List<String>? uploadedImages,  List<AvailabilityFilterEntity> filters)?  $default,) {final _that = this;
 switch (_that) {
 case _ProductsState() when $default != null:
-return $default(_that.isLoading,_that.isProductLoading,_that.isShowProductLoader,_that.hasReachedMaxProducts,_that.createdSuccessful,_that.isCreating,_that.error,_that.search,_that.products,_that.relatedById,_that.product,_that.categories,_that.selectedCategoryId,_that.createdProductCategoryId,_that.pickedImages,_that.uploadedImages,_that.filters);case _:
+return $default(_that.isLoading,_that.isProductLoading,_that.isShowProductLoader,_that.hasReachedMaxProducts,_that.createdSuccessful,_that.isCreating,_that.error,_that.search,_that.searchCategory,_that.innerSearchCategory,_that.products,_that.relatedById,_that.product,_that.categories,_that.categorySearchResults,_that.innerCategorySearchResults,_that.selectedCategoryId,_that.createdProductCategoryId,_that.pickedImages,_that.uploadedImages,_that.filters);case _:
   return null;
 
 }
@@ -223,7 +227,7 @@ return $default(_that.isLoading,_that.isProductLoading,_that.isShowProductLoader
 
 
 class _ProductsState implements ProductsState {
-  const _ProductsState({this.isLoading = false, this.isProductLoading = false, this.isShowProductLoader = false, this.hasReachedMaxProducts = false, this.createdSuccessful = false, this.isCreating = false, this.error, this.search, final  List<ProductEntity> products = const [], final  List<ProductEntity> relatedById = const [], this.product, final  List<CategoryEntity> categories = const [], this.selectedCategoryId = '', this.createdProductCategoryId = '', final  List<AppImageEntity>? pickedImages, final  List<String>? uploadedImages, final  List<AvailabilityFilterEntity> filters = const []}): _products = products,_relatedById = relatedById,_categories = categories,_pickedImages = pickedImages,_uploadedImages = uploadedImages,_filters = filters;
+  const _ProductsState({this.isLoading = false, this.isProductLoading = false, this.isShowProductLoader = false, this.hasReachedMaxProducts = false, this.createdSuccessful = false, this.isCreating = false, this.error, this.search, this.searchCategory, this.innerSearchCategory, final  List<ProductEntity> products = const [], final  List<ProductEntity> relatedById = const [], this.product, final  List<CategoryEntity> categories = const [], final  List<CategoryEntity> categorySearchResults = const [], final  List<CategoryEntity> innerCategorySearchResults = const [], this.selectedCategoryId = '', this.createdProductCategoryId = '', final  List<AppImageEntity>? pickedImages, final  List<String>? uploadedImages, final  List<AvailabilityFilterEntity> filters = const []}): _products = products,_relatedById = relatedById,_categories = categories,_categorySearchResults = categorySearchResults,_innerCategorySearchResults = innerCategorySearchResults,_pickedImages = pickedImages,_uploadedImages = uploadedImages,_filters = filters;
   
 
 @override@JsonKey() final  bool isLoading;
@@ -235,6 +239,8 @@ class _ProductsState implements ProductsState {
 @override@JsonKey() final  bool isCreating;
 @override final  String? error;
 @override final  String? search;
+@override final  String? searchCategory;
+@override final  String? innerSearchCategory;
  final  List<ProductEntity> _products;
 @override@JsonKey() List<ProductEntity> get products {
   if (_products is EqualUnmodifiableListView) return _products;
@@ -255,6 +261,20 @@ class _ProductsState implements ProductsState {
   if (_categories is EqualUnmodifiableListView) return _categories;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_categories);
+}
+
+ final  List<CategoryEntity> _categorySearchResults;
+@override@JsonKey() List<CategoryEntity> get categorySearchResults {
+  if (_categorySearchResults is EqualUnmodifiableListView) return _categorySearchResults;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_categorySearchResults);
+}
+
+ final  List<CategoryEntity> _innerCategorySearchResults;
+@override@JsonKey() List<CategoryEntity> get innerCategorySearchResults {
+  if (_innerCategorySearchResults is EqualUnmodifiableListView) return _innerCategorySearchResults;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_innerCategorySearchResults);
 }
 
 @override@JsonKey() final  String selectedCategoryId;
@@ -295,16 +315,16 @@ _$ProductsStateCopyWith<_ProductsState> get copyWith => __$ProductsStateCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductsState&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.isProductLoading, isProductLoading) || other.isProductLoading == isProductLoading)&&(identical(other.isShowProductLoader, isShowProductLoader) || other.isShowProductLoader == isShowProductLoader)&&(identical(other.hasReachedMaxProducts, hasReachedMaxProducts) || other.hasReachedMaxProducts == hasReachedMaxProducts)&&(identical(other.createdSuccessful, createdSuccessful) || other.createdSuccessful == createdSuccessful)&&(identical(other.isCreating, isCreating) || other.isCreating == isCreating)&&(identical(other.error, error) || other.error == error)&&(identical(other.search, search) || other.search == search)&&const DeepCollectionEquality().equals(other._products, _products)&&const DeepCollectionEquality().equals(other._relatedById, _relatedById)&&(identical(other.product, product) || other.product == product)&&const DeepCollectionEquality().equals(other._categories, _categories)&&(identical(other.selectedCategoryId, selectedCategoryId) || other.selectedCategoryId == selectedCategoryId)&&(identical(other.createdProductCategoryId, createdProductCategoryId) || other.createdProductCategoryId == createdProductCategoryId)&&const DeepCollectionEquality().equals(other._pickedImages, _pickedImages)&&const DeepCollectionEquality().equals(other._uploadedImages, _uploadedImages)&&const DeepCollectionEquality().equals(other._filters, _filters));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductsState&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.isProductLoading, isProductLoading) || other.isProductLoading == isProductLoading)&&(identical(other.isShowProductLoader, isShowProductLoader) || other.isShowProductLoader == isShowProductLoader)&&(identical(other.hasReachedMaxProducts, hasReachedMaxProducts) || other.hasReachedMaxProducts == hasReachedMaxProducts)&&(identical(other.createdSuccessful, createdSuccessful) || other.createdSuccessful == createdSuccessful)&&(identical(other.isCreating, isCreating) || other.isCreating == isCreating)&&(identical(other.error, error) || other.error == error)&&(identical(other.search, search) || other.search == search)&&(identical(other.searchCategory, searchCategory) || other.searchCategory == searchCategory)&&(identical(other.innerSearchCategory, innerSearchCategory) || other.innerSearchCategory == innerSearchCategory)&&const DeepCollectionEquality().equals(other._products, _products)&&const DeepCollectionEquality().equals(other._relatedById, _relatedById)&&(identical(other.product, product) || other.product == product)&&const DeepCollectionEquality().equals(other._categories, _categories)&&const DeepCollectionEquality().equals(other._categorySearchResults, _categorySearchResults)&&const DeepCollectionEquality().equals(other._innerCategorySearchResults, _innerCategorySearchResults)&&(identical(other.selectedCategoryId, selectedCategoryId) || other.selectedCategoryId == selectedCategoryId)&&(identical(other.createdProductCategoryId, createdProductCategoryId) || other.createdProductCategoryId == createdProductCategoryId)&&const DeepCollectionEquality().equals(other._pickedImages, _pickedImages)&&const DeepCollectionEquality().equals(other._uploadedImages, _uploadedImages)&&const DeepCollectionEquality().equals(other._filters, _filters));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,isLoading,isProductLoading,isShowProductLoader,hasReachedMaxProducts,createdSuccessful,isCreating,error,search,const DeepCollectionEquality().hash(_products),const DeepCollectionEquality().hash(_relatedById),product,const DeepCollectionEquality().hash(_categories),selectedCategoryId,createdProductCategoryId,const DeepCollectionEquality().hash(_pickedImages),const DeepCollectionEquality().hash(_uploadedImages),const DeepCollectionEquality().hash(_filters));
+int get hashCode => Object.hashAll([runtimeType,isLoading,isProductLoading,isShowProductLoader,hasReachedMaxProducts,createdSuccessful,isCreating,error,search,searchCategory,innerSearchCategory,const DeepCollectionEquality().hash(_products),const DeepCollectionEquality().hash(_relatedById),product,const DeepCollectionEquality().hash(_categories),const DeepCollectionEquality().hash(_categorySearchResults),const DeepCollectionEquality().hash(_innerCategorySearchResults),selectedCategoryId,createdProductCategoryId,const DeepCollectionEquality().hash(_pickedImages),const DeepCollectionEquality().hash(_uploadedImages),const DeepCollectionEquality().hash(_filters)]);
 
 @override
 String toString() {
-  return 'ProductsState(isLoading: $isLoading, isProductLoading: $isProductLoading, isShowProductLoader: $isShowProductLoader, hasReachedMaxProducts: $hasReachedMaxProducts, createdSuccessful: $createdSuccessful, isCreating: $isCreating, error: $error, search: $search, products: $products, relatedById: $relatedById, product: $product, categories: $categories, selectedCategoryId: $selectedCategoryId, createdProductCategoryId: $createdProductCategoryId, pickedImages: $pickedImages, uploadedImages: $uploadedImages, filters: $filters)';
+  return 'ProductsState(isLoading: $isLoading, isProductLoading: $isProductLoading, isShowProductLoader: $isShowProductLoader, hasReachedMaxProducts: $hasReachedMaxProducts, createdSuccessful: $createdSuccessful, isCreating: $isCreating, error: $error, search: $search, searchCategory: $searchCategory, innerSearchCategory: $innerSearchCategory, products: $products, relatedById: $relatedById, product: $product, categories: $categories, categorySearchResults: $categorySearchResults, innerCategorySearchResults: $innerCategorySearchResults, selectedCategoryId: $selectedCategoryId, createdProductCategoryId: $createdProductCategoryId, pickedImages: $pickedImages, uploadedImages: $uploadedImages, filters: $filters)';
 }
 
 
@@ -315,7 +335,7 @@ abstract mixin class _$ProductsStateCopyWith<$Res> implements $ProductsStateCopy
   factory _$ProductsStateCopyWith(_ProductsState value, $Res Function(_ProductsState) _then) = __$ProductsStateCopyWithImpl;
 @override @useResult
 $Res call({
- bool isLoading, bool isProductLoading, bool isShowProductLoader, bool hasReachedMaxProducts, bool createdSuccessful, bool isCreating, String? error, String? search, List<ProductEntity> products, List<ProductEntity> relatedById, ProductEntity? product, List<CategoryEntity> categories, String selectedCategoryId, String createdProductCategoryId, List<AppImageEntity>? pickedImages, List<String>? uploadedImages, List<AvailabilityFilterEntity> filters
+ bool isLoading, bool isProductLoading, bool isShowProductLoader, bool hasReachedMaxProducts, bool createdSuccessful, bool isCreating, String? error, String? search, String? searchCategory, String? innerSearchCategory, List<ProductEntity> products, List<ProductEntity> relatedById, ProductEntity? product, List<CategoryEntity> categories, List<CategoryEntity> categorySearchResults, List<CategoryEntity> innerCategorySearchResults, String selectedCategoryId, String createdProductCategoryId, List<AppImageEntity>? pickedImages, List<String>? uploadedImages, List<AvailabilityFilterEntity> filters
 });
 
 
@@ -332,7 +352,7 @@ class __$ProductsStateCopyWithImpl<$Res>
 
 /// Create a copy of ProductsState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? isLoading = null,Object? isProductLoading = null,Object? isShowProductLoader = null,Object? hasReachedMaxProducts = null,Object? createdSuccessful = null,Object? isCreating = null,Object? error = freezed,Object? search = freezed,Object? products = null,Object? relatedById = null,Object? product = freezed,Object? categories = null,Object? selectedCategoryId = null,Object? createdProductCategoryId = null,Object? pickedImages = freezed,Object? uploadedImages = freezed,Object? filters = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? isLoading = null,Object? isProductLoading = null,Object? isShowProductLoader = null,Object? hasReachedMaxProducts = null,Object? createdSuccessful = null,Object? isCreating = null,Object? error = freezed,Object? search = freezed,Object? searchCategory = freezed,Object? innerSearchCategory = freezed,Object? products = null,Object? relatedById = null,Object? product = freezed,Object? categories = null,Object? categorySearchResults = null,Object? innerCategorySearchResults = null,Object? selectedCategoryId = null,Object? createdProductCategoryId = null,Object? pickedImages = freezed,Object? uploadedImages = freezed,Object? filters = null,}) {
   return _then(_ProductsState(
 isLoading: null == isLoading ? _self.isLoading : isLoading // ignore: cast_nullable_to_non_nullable
 as bool,isProductLoading: null == isProductLoading ? _self.isProductLoading : isProductLoading // ignore: cast_nullable_to_non_nullable
@@ -342,10 +362,14 @@ as bool,createdSuccessful: null == createdSuccessful ? _self.createdSuccessful :
 as bool,isCreating: null == isCreating ? _self.isCreating : isCreating // ignore: cast_nullable_to_non_nullable
 as bool,error: freezed == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
 as String?,search: freezed == search ? _self.search : search // ignore: cast_nullable_to_non_nullable
+as String?,searchCategory: freezed == searchCategory ? _self.searchCategory : searchCategory // ignore: cast_nullable_to_non_nullable
+as String?,innerSearchCategory: freezed == innerSearchCategory ? _self.innerSearchCategory : innerSearchCategory // ignore: cast_nullable_to_non_nullable
 as String?,products: null == products ? _self._products : products // ignore: cast_nullable_to_non_nullable
 as List<ProductEntity>,relatedById: null == relatedById ? _self._relatedById : relatedById // ignore: cast_nullable_to_non_nullable
 as List<ProductEntity>,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as ProductEntity?,categories: null == categories ? _self._categories : categories // ignore: cast_nullable_to_non_nullable
+as List<CategoryEntity>,categorySearchResults: null == categorySearchResults ? _self._categorySearchResults : categorySearchResults // ignore: cast_nullable_to_non_nullable
+as List<CategoryEntity>,innerCategorySearchResults: null == innerCategorySearchResults ? _self._innerCategorySearchResults : innerCategorySearchResults // ignore: cast_nullable_to_non_nullable
 as List<CategoryEntity>,selectedCategoryId: null == selectedCategoryId ? _self.selectedCategoryId : selectedCategoryId // ignore: cast_nullable_to_non_nullable
 as String,createdProductCategoryId: null == createdProductCategoryId ? _self.createdProductCategoryId : createdProductCategoryId // ignore: cast_nullable_to_non_nullable
 as String,pickedImages: freezed == pickedImages ? _self._pickedImages : pickedImages // ignore: cast_nullable_to_non_nullable

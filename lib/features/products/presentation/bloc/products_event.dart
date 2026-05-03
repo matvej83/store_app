@@ -47,6 +47,13 @@ class ProductsEvent with _$ProductsEvent {
   const factory ProductsEvent.categoryDeleted({required int id}) =
       CategoryDeleted;
 
+  const factory ProductsEvent.categorySearchStarted({
+    String? search,
+    bool? useForInnerSearch,
+  }) = CategorySearchStarted;
+
+  const factory ProductsEvent.innerSearchDisabled() = InnerSearchDisabled;
+
   const factory ProductsEvent.imagePicked() = ImagePicked;
 
   const factory ProductsEvent.imageRemoved({required AppImageEntity image}) =

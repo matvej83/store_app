@@ -3,6 +3,7 @@ import 'package:clean_architecture_test/features/products/data/models/product_mo
 import 'package:clean_architecture_test/features/products/presentation/bloc/products_bloc.dart';
 import 'package:clean_architecture_test/features/products/presentation/bloc/products_event.dart';
 import 'package:clean_architecture_test/features/products/presentation/bloc/products_state.dart';
+import 'package:clean_architecture_test/features/products/presentation/widgets/category_search.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -62,6 +63,7 @@ class _AddProductPageState extends State<AddProductPage> {
   @override
   void deactivate() {
     bloc.add(const DataRemoved());
+    bloc.add(const InnerSearchDisabled());
     super.deactivate();
   }
 
@@ -113,12 +115,21 @@ class _AddProductPageState extends State<AddProductPage> {
               spacing: 16.0,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  '${'addProductScreen.selectCategory'.tr()}:',
-                  style: textTheme.titleMedium,
+                CategorySearch(
+                  title: '${'addProductScreen.selectCategory'.tr()}:',
+                  onSearchStarted: (search) {
+                    bloc.add(
+                      CategorySearchStarted(
+                        search: search,
+                        useForInnerSearch: true,
+                      ),
+                    );
+                  },
                 ),
                 CategoriesList(
-                  categories: state.categories,
+                  categories: state.innerSearchCategory?.isNotEmpty == true
+                      ? state.innerCategorySearchResults
+                      : state.categories,
                   selectedCategoryId: state.createdProductCategoryId,
                   onTap: (category) {
                     if (!isLoading) {
