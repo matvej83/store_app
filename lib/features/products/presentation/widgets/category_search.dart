@@ -19,6 +19,15 @@ class CategorySearch extends StatefulWidget {
 class _CategorySearchState extends State<CategorySearch> {
   bool isActive = false;
 
+  void _toggleSearch() {
+    setState(() {
+      isActive = !isActive;
+    });
+    if (!isActive) {
+      widget.onSearchStarted('');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -32,14 +41,7 @@ class _CategorySearchState extends State<CategorySearch> {
             ProductsUtils.getSearchCategoryButton(
               context,
               isActive: isActive,
-              onTap: () {
-                setState(() {
-                  isActive = !isActive;
-                });
-                if (!isActive) {
-                  widget.onSearchStarted('');
-                }
-              },
+              onTap: _toggleSearch,
             ),
           ],
         ),

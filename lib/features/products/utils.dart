@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:typed_data';
 import 'package:clean_architecture_test/core/domain/entity/availability_filter_entity.dart';
 import 'package:clean_architecture_test/features/products/domain/entity/app_image_entity.dart';
+import 'package:clean_architecture_test/features/products/domain/entity/category_entity.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:image/image.dart' as img;
@@ -151,5 +152,18 @@ class ProductsUtils {
         ?.apiValue;
 
     return (priceMin, priceMax);
+  }
+
+  static List<CategoryEntity> filterCategoriesBySearchTerm(
+    List<CategoryEntity> categories,
+    String? searchTerm,
+  ) {
+    if (searchTerm == null || searchTerm.isEmpty) {
+      return categories;
+    }
+    final term = searchTerm.toLowerCase();
+    return categories
+        .where((category) => category.name.toLowerCase().contains(term))
+        .toList();
   }
 }

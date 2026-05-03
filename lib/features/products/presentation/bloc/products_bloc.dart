@@ -237,12 +237,10 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
     } else {
       emit(state.copyWith(searchCategory: event.search));
     }
-    final results = state.categories
-        .where(
-          (e) =>
-              e.name.toLowerCase().contains(event.search?.toLowerCase() ?? ''),
-        )
-        .toList();
+    final results = ProductsUtils.filterCategoriesBySearchTerm(
+      state.categories,
+      event.search,
+    );
     if (event.useForInnerSearch == true) {
       emit(state.copyWith(innerCategorySearchResults: results));
     } else {
