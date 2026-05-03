@@ -20,6 +20,7 @@ class FullScreenImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Stack(
       alignment: AlignmentDirectional.center,
       children: [
@@ -35,7 +36,11 @@ class FullScreenImage extends StatelessWidget {
             onPressed: () {
               context.pop();
             },
-            icon: const Icon(Icons.close, size: 32.0),
+            icon: Icon(
+              Icons.close,
+              size: 32.0,
+              color: theme.colorScheme.onPrimary,
+            ),
           ),
         ),
       ],
