@@ -11,7 +11,10 @@ void main() {
     ];
 
     test('returns original list when search term is null', () {
-      final result = ProductsUtils.filterCategoriesBySearchTerm(categories, null);
+      final result = ProductsUtils.filterCategoriesBySearchTerm(
+        categories,
+        null,
+      );
       expect(result, categories);
     });
 
@@ -21,13 +24,19 @@ void main() {
     });
 
     test('filters categories case-insensitively', () {
-      final result = ProductsUtils.filterCategoriesBySearchTerm(categories, 'book');
+      final result = ProductsUtils.filterCategoriesBySearchTerm(
+        categories,
+        'book',
+      );
       expect(result.length, 1);
       expect(result.first.name, 'Books');
     });
 
     test('returns empty list when no matches', () {
-      final result = ProductsUtils.filterCategoriesBySearchTerm(categories, 'food');
+      final result = ProductsUtils.filterCategoriesBySearchTerm(
+        categories,
+        'food',
+      );
       expect(result, isEmpty);
     });
   });
