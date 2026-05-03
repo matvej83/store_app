@@ -2,6 +2,7 @@ import 'package:clean_architecture_test/core/presentation/widgets/scroll_up_wrap
 import 'package:clean_architecture_test/features/products/presentation/bloc/products_bloc.dart';
 import 'package:clean_architecture_test/features/products/presentation/bloc/products_state.dart';
 import 'package:clean_architecture_test/features/products/presentation/widgets/categories_list.dart';
+import 'package:clean_architecture_test/features/products/presentation/widgets/category_search.dart';
 import 'package:clean_architecture_test/features/products/presentation/widgets/filter_modal.dart';
 import 'package:clean_architecture_test/features/products/presentation/widgets/products_list.dart';
 import 'package:clean_architecture_test/features/products/utils.dart';
@@ -46,7 +47,6 @@ class _ProductsPageState extends State<ProductsPage> {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
     return BlocBuilder<ProductsBloc, ProductsState>(
       builder: (context, state) {
         return state.isLoading
@@ -114,9 +114,11 @@ class _ProductsPageState extends State<ProductsPage> {
                       SliverPadding(
                         padding: const EdgeInsets.only(top: 12.0),
                         sliver: SliverToBoxAdapter(
-                          child: Text(
-                            'productsScreen.categories'.tr(),
-                            style: textTheme.titleMedium,
+                          child: CategorySearch(
+                            title: 'productsScreen.categories'.tr(),
+                            onSearchStarted: (search) {
+                              bloc.add(CategorySearchStarted(search: search));
+                            },
                           ),
                         ),
                       ),
@@ -124,7 +126,9 @@ class _ProductsPageState extends State<ProductsPage> {
                         padding: const EdgeInsets.only(top: 12.0),
                         sliver: SliverToBoxAdapter(
                           child: CategoriesList(
-                            categories: state.categories,
+                            categories: state.searchCategory?.isNotEmpty == true
+                                ? state.categorySearchResults
+                                : state.categories,
                             selectedCategoryId: state.selectedCategoryId,
                             onTap: (category) {
                               final isSelected =

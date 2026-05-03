@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:typed_data';
 import 'package:clean_architecture_test/core/domain/entity/availability_filter_entity.dart';
 import 'package:clean_architecture_test/features/products/domain/entity/app_image_entity.dart';
+import 'package:clean_architecture_test/features/products/domain/entity/category_entity.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:image/image.dart' as img;
@@ -78,18 +79,19 @@ class ProductsUtils {
     return '$base$ext';
   }
 
+  static Color getButtonColor(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return isDark ? Colors.grey.shade600 : Colors.grey.shade400;
+  }
+
   static Widget getFilterButton(
     BuildContext context, {
     required VoidCallback onTap,
     bool isActive = false,
   }) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final backgroundColor = isDark
-        ? Colors.grey.shade600
-        : Colors.grey.shade400;
     return IconButton(
       style: IconButton.styleFrom(
-        backgroundColor: backgroundColor,
+        backgroundColor: getButtonColor(context),
         elevation: 0,
         shadowColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
@@ -99,6 +101,36 @@ class ProductsUtils {
         isActive ? Icons.filter_alt : Icons.filter_alt_outlined,
         color: isActive ? Colors.blue : Colors.white,
         size: 24.0,
+      ),
+    );
+  }
+
+  static Widget getSearchCategoryButton(
+    BuildContext context, {
+    required VoidCallback onTap,
+    bool isActive = false,
+  }) {
+    return SizedBox(
+      width: 24.0,
+      height: 24.0,
+      child: IconButton(
+        padding: EdgeInsets.zero,
+        style: IconButton.styleFrom(
+          backgroundColor: getButtonColor(context),
+          elevation: 0,
+          shadowColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
+          padding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4.0),
+          ),
+        ),
+        onPressed: onTap,
+        icon: Icon(
+          isActive ? Icons.search_off_outlined : Icons.search_outlined,
+          color: isActive ? Colors.blue : Colors.white,
+          size: 16.0,
+        ),
       ),
     );
   }
@@ -120,5 +152,18 @@ class ProductsUtils {
         ?.apiValue;
 
     return (priceMin, priceMax);
+  }
+
+  static List<CategoryEntity> filterCategoriesBySearchTerm(
+    List<CategoryEntity> categories,
+    String? searchTerm,
+  ) {
+    if (searchTerm == null || searchTerm.isEmpty) {
+      return categories;
+    }
+    final term = searchTerm.toLowerCase();
+    return categories
+        .where((category) => category.name.toLowerCase().contains(term))
+        .toList();
   }
 }

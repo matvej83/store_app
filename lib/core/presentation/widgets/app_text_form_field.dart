@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AppTextFormField extends StatelessWidget {
   const AppTextFormField({
@@ -14,6 +15,7 @@ class AppTextFormField extends StatelessWidget {
     this.onTap,
     this.focusNode,
     this.unfocusOnTapOutside = true,
+    this.inputFormatters,
   });
 
   final TextEditingController controller;
@@ -27,6 +29,7 @@ class AppTextFormField extends StatelessWidget {
   final VoidCallback? onTap;
   final FocusNode? focusNode;
   final bool unfocusOnTapOutside;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +41,7 @@ class AppTextFormField extends StatelessWidget {
       onTap: onTap,
       keyboardType: keyboardType,
       textAlignVertical: TextAlignVertical.center,
+      inputFormatters: inputFormatters,
       decoration:
           decoration ?? InputDecoration(labelText: labelText, prefix: prefix),
       onTapOutside: unfocusOnTapOutside

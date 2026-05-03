@@ -54,6 +54,8 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
         productDeleted: (e) => _onProductDeleted(e, emit),
         categoryCreated: (e) => _onCategoryCreated(e, emit),
         categoryDeleted: (e) => _onCategoryDeleted(e, emit),
+        categorySearchStarted: (e) => _onCategorySearchStarted(e, emit),
+        innerSearchDisabled: (e) => _onInnerSearchDisabled(e, emit),
         filterAdded: (e) => _onFilterAdded(e, emit),
         filterRemoved: (e) => _onFilterRemoved(e, emit),
         filtersSaved: (e) => _onFiltersSaved(e, emit),
@@ -223,6 +225,27 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
         emit(state.copyWith(categories: r, isLoading: false));
       },
     );
+  }
+
+  /// Search category
+  Future<void> _onCategorySearchStarted(
+    CategorySearchStarted event,
+    Emitter<ProductsState> emit,
+  ) async {
+    if (event.useForInnerSearch == true) {
+      emit(state.copyWith(innerSearchCategory: event.search));
+    } else {
+      emit(state.copyWith(searchCategory: event.search));
+    }
+    final results = ProductsUtils.filterCategoriesBySearchTerm(
+      state.categories,
+      event.search,
+    );
+    if (event.useForInnerSearch == true) {
+      emit(state.copyWith(innerCategorySearchResults: results));
+    } else {
+      emit(state.copyWith(categorySearchResults: results));
+    }
   }
 
   /// Similar products
@@ -434,6 +457,16 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
         }
         add(const CategoriesFetched());
       },
+    );
+  }
+
+  /// Disable inner search results
+  Future<void> _onInnerSearchDisabled(
+    InnerSearchDisabled event,
+    Emitter<ProductsState> emit,
+  ) async {
+    emit(
+      state.copyWith(innerCategorySearchResults: [], innerSearchCategory: ''),
     );
   }
 
