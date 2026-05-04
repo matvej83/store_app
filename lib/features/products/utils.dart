@@ -110,6 +110,7 @@ class ProductsUtils {
     required VoidCallback onTap,
     bool isActive = false,
   }) {
+    final theme = Theme.of(context);
     return SizedBox(
       width: 24.0,
       height: 24.0,
@@ -128,7 +129,7 @@ class ProductsUtils {
         onPressed: onTap,
         icon: Icon(
           isActive ? Icons.search_off_outlined : Icons.search_outlined,
-          color: isActive ? Colors.blue : Colors.white,
+          color: theme.colorScheme.onPrimary,
           size: 16.0,
         ),
       ),

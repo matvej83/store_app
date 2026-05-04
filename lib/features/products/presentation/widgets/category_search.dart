@@ -45,23 +45,52 @@ class _CategorySearchState extends State<CategorySearch> {
             ),
           ],
         ),
-        if (isActive)
-          Row(
-            children: [
-              Expanded(
-                child: SizedBox(
-                  height: 40.0,
-                  child: SearchBar(
-                    leading: const Icon(Icons.search, color: Colors.white),
-                    onTapOutside: (PointerDownEvent event) {
-                      FocusManager.instance.primaryFocus?.unfocus();
-                    },
-                    onChanged: widget.onSearchStarted,
-                  ),
+
+        AnimatedSwitcher(
+          duration: const Duration(milliseconds: 300),
+          switchInCurve: Curves.easeOut,
+          switchOutCurve: Curves.easeIn,
+          transitionBuilder: (child, animation) {
+            final offsetAnimation = Tween<Offset>(
+              begin: const Offset(0, -0.2),
+              end: Offset.zero,
+            ).animate(animation);
+
+            return FadeTransition(
+              opacity: animation,
+              child: SlideTransition(
+                position: offsetAnimation,
+                child: SizeTransition(
+                  sizeFactor: animation,
+                  axisAlignment: -1.0,
+                  child: child,
                 ),
               ),
-            ],
-          ),
+            );
+          },
+          child: isActive
+              ? Row(
+                  key: const ValueKey('search'),
+                  children: [
+                    Expanded(
+                      child: SizedBox(
+                        height: 40.0,
+                        child: SearchBar(
+                          leading: const Icon(
+                            Icons.search,
+                            color: Colors.white,
+                          ),
+                          onTapOutside: (PointerDownEvent event) {
+                            FocusManager.instance.primaryFocus?.unfocus();
+                          },
+                          onChanged: widget.onSearchStarted,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              : const SizedBox(key: ValueKey('empty')),
+        ),
       ],
     );
   }
