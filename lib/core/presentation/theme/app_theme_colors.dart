@@ -19,7 +19,6 @@ class AppThemeColors {
     required this.fieldBorderDisabled,
     required this.primaryText,
     required this.secondaryText,
-    // New IconButton colors
     required this.iconButtonBackground,
     required this.iconButtonBackgroundActive,
     required this.iconButtonBackgroundReset,

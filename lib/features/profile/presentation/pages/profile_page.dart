@@ -17,6 +17,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  late ThemeData theme;
   late TextTheme textTheme;
   bool _showSelector = false;
 
@@ -31,7 +32,8 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    textTheme = Theme.of(context).textTheme;
+    theme = Theme.of(context);
+    textTheme = theme.textTheme;
   }
 
   @override
@@ -75,10 +77,13 @@ class _ProfilePageState extends State<ProfilePage> {
                           const AuthLogoutRequested(),
                         );
                       },
-                      icon: const Icon(
+                      style: IconButton.styleFrom(
+                        backgroundColor: theme.colorScheme.surfaceTint,
+                      ),
+                      icon: Icon(
                         Icons.logout,
                         size: 28.0,
-                        color: Colors.blue,
+                        color: theme.colorScheme.primary,
                       ),
                     ),
                   ],
