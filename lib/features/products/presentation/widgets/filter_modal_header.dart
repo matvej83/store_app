@@ -28,9 +28,6 @@ class FilterModalHeader extends StatelessWidget {
             if (canFiltersBeSaved)
               IconButton(
                 onPressed: onResetTap,
-                style: IconButton.styleFrom(
-                  backgroundColor: Colors.grey.shade400,
-                ),
                 icon: const Icon(
                   Icons.filter_alt_off,
                   size: 20.0,

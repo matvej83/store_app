@@ -79,11 +79,6 @@ class ProductsUtils {
     return '$base$ext';
   }
 
-  static Color getButtonColor(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return isDark ? Colors.grey.shade600 : Colors.grey.shade400;
-  }
-
   static Widget getFilterButton(
     BuildContext context, {
     required VoidCallback onTap,
@@ -91,7 +86,11 @@ class ProductsUtils {
   }) {
     return IconButton(
       style: IconButton.styleFrom(
-        backgroundColor: getButtonColor(context),
+        backgroundColor:
+            Theme.of(
+              context,
+            ).iconButtonTheme.style?.backgroundColor?.resolve({}) ??
+            Colors.grey,
         elevation: 0,
         shadowColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
@@ -117,7 +116,11 @@ class ProductsUtils {
       child: IconButton(
         padding: EdgeInsets.zero,
         style: IconButton.styleFrom(
-          backgroundColor: getButtonColor(context),
+          backgroundColor:
+              Theme.of(
+                context,
+              ).iconButtonTheme.style?.backgroundColor?.resolve({}) ??
+              Colors.grey,
           elevation: 0,
           shadowColor: Colors.transparent,
           surfaceTintColor: Colors.transparent,
