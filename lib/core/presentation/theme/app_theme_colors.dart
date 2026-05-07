@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../features/theme/domain/entity/app_theme_mode.dart';
 
 class AppThemeColors {
@@ -20,6 +19,10 @@ class AppThemeColors {
     required this.fieldBorderDisabled,
     required this.primaryText,
     required this.secondaryText,
+    // New IconButton colors
+    required this.iconButtonBackground,
+    required this.iconButtonBackgroundActive,
+    required this.iconButtonBackgroundReset,
   });
 
   final Color primary;
@@ -38,6 +41,9 @@ class AppThemeColors {
   final Color fieldBorderDisabled;
   final Color primaryText;
   final Color secondaryText;
+  final Color iconButtonBackground;
+  final Color iconButtonBackgroundActive;
+  final Color iconButtonBackgroundReset;
 
   static AppThemeColors fromMode(AppThemeMode mode) {
     switch (mode) {
@@ -47,25 +53,6 @@ class AppThemeColors {
         return dark;
     }
   }
-
-  static final dark = AppThemeColors(
-    primary: Colors.blue,
-    onPrimary: Colors.white,
-    error: Colors.red,
-    onError: Colors.white,
-    success: Colors.green,
-    scaffoldBackground: Colors.black,
-    unselectedWidget: Colors.grey.shade600,
-    canvas: Colors.black,
-    splash: Colors.black,
-    surfaceTint: Colors.transparent,
-    bottomBarBackground: const Color(0xFF222222),
-    fieldBorder: Colors.grey,
-    fieldBorderFocussed: Colors.blue,
-    fieldBorderDisabled: Colors.blueGrey,
-    primaryText: Colors.white,
-    secondaryText: Colors.grey.shade400,
-  );
 
   static final light = AppThemeColors(
     primary: Colors.blue,
@@ -84,5 +71,30 @@ class AppThemeColors {
     fieldBorderDisabled: Colors.blueGrey,
     primaryText: Colors.black,
     secondaryText: Colors.grey.shade600,
+    iconButtonBackground: Colors.grey.shade300,
+    iconButtonBackgroundActive: Colors.blue,
+    iconButtonBackgroundReset: Colors.grey.shade400,
+  );
+
+  static final dark = AppThemeColors(
+    primary: Colors.blue,
+    onPrimary: Colors.white,
+    error: Colors.red,
+    onError: Colors.white,
+    success: Colors.green,
+    scaffoldBackground: Colors.black,
+    unselectedWidget: Colors.grey.shade600,
+    canvas: Colors.black,
+    splash: Colors.black,
+    surfaceTint: Colors.transparent,
+    bottomBarBackground: const Color(0xFF222222),
+    fieldBorder: Colors.grey,
+    fieldBorderFocussed: Colors.blue,
+    fieldBorderDisabled: Colors.blueGrey,
+    primaryText: Colors.white,
+    secondaryText: Colors.grey.shade400,
+    iconButtonBackground: Colors.grey.shade800,
+    iconButtonBackgroundActive: Colors.blue,
+    iconButtonBackgroundReset: Colors.grey.shade700,
   );
 }
