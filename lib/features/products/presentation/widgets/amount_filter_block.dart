@@ -46,6 +46,10 @@ class AmountFilterBlock extends StatelessWidget {
                 height: 21.0,
                 child: IconButton(
                   onPressed: onRemoveAmountFilters,
+                  style: IconButton.styleFrom(
+                    backgroundColor: theme.colorScheme.surfaceTint,
+                    padding: EdgeInsets.zero,
+                  ),
                   icon: Icon(
                     Icons.indeterminate_check_box,
                     color: Colors.grey.shade400,
