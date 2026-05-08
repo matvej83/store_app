@@ -76,7 +76,7 @@ void main() {
 
     await tester.pumpWidget(createWidget(userId: '1'));
 
-    // вместо pumpAndSettle
+    // not pumpAndSettle!
     await tester.pump();
 
     // Verify that ImageBox is displayed with the correct image URL
@@ -87,7 +87,7 @@ void main() {
     expect(imageBoxFinder, findsOneWidget);
 
     // Verify text fields
-    expect(find.text('\$${user.email}'), findsOneWidget);
+    expect(find.text(user.email), findsOneWidget);
     expect(find.text(user.name), findsOneWidget);
     expect(find.text(user.role), findsOneWidget);
   });

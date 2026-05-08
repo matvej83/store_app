@@ -47,15 +47,15 @@ class _UserPageState extends State<UserPage> {
                           spacing: 8.0,
                           children: [
                             Text(
-                              '\$${state.user?.email}',
+                              state.user?.email ?? '',
                               style: textTheme.bodyMedium,
                             ),
                             Text(
-                              '${state.user?.name}',
+                              state.user?.name ?? '',
                               style: textTheme.bodyLarge,
                             ),
                             Text(
-                              '${state.user?.role}',
+                              state.user?.role ?? '',
                               style: textTheme.bodySmall,
                             ),
                           ],
