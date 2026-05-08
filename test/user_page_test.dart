@@ -69,16 +69,21 @@ void main() {
       role: 'admin',
       avatar: 'https://example.com/avatar.jpg',
     );
+
     when(() => usersBloc.state).thenReturn(UsersState(user: user));
+
     when(() => usersBloc.stream).thenAnswer((_) => usersController.stream);
 
     await tester.pumpWidget(createWidget(userId: '1'));
-    await tester.pumpAndSettle();
+
+    // вместо pumpAndSettle
+    await tester.pump();
 
     // Verify that ImageBox is displayed with the correct image URL
     final imageBoxFinder = find.byWidgetPredicate(
       (widget) => widget is ImageBox && widget.imageUrl == user.avatar,
     );
+
     expect(imageBoxFinder, findsOneWidget);
 
     // Verify text fields
