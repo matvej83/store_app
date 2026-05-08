@@ -70,6 +70,9 @@ class ListItem extends StatelessWidget {
           onPressed: () {
             onRemove(image);
           },
+          style: IconButton.styleFrom(
+            backgroundColor: theme.colorScheme.surfaceTint,
+          ),
           icon: Icon(
             Icons.delete_forever,
             size: 24.0,
