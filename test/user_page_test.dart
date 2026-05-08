@@ -76,7 +76,7 @@ void main() {
 
     await tester.pumpWidget(createWidget(userId: '1'));
 
-    // вместо pumpAndSettle
+    // not pumpAndSettle!
     await tester.pump();
 
     // Verify that ImageBox is displayed with the correct image URL
