@@ -180,6 +180,13 @@ class _ProductsPageState extends State<ProductsPage> {
                         padding: const EdgeInsets.only(top: 24.0, right: 16.0),
                         sliver: ProductsList(products: state.products),
                       ),
+                      // Show empty state when there are no products and not loading
+                      if (state.products.isEmpty && !state.isLoading)
+                        const SliverToBoxAdapter(
+                          child: Center(
+                            child: Text('No products available'),
+                          ),
+                        ),
                       if (state.isShowProductLoader)
                         const SliverPadding(
                           padding: EdgeInsets.symmetric(vertical: 24.0),
