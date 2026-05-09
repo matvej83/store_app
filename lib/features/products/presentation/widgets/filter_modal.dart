@@ -227,7 +227,8 @@ class _FilterModalState extends State<FilterModal> {
                         amountError: amountError,
                       ),
                       ElevatedButton(
-                        onPressed: wasFiltersChanged && amountError.value.isEmpty
+                        onPressed:
+                            wasFiltersChanged && amountError.value.isEmpty
                             ? () {
                                 context.pop();
                                 saveFilters();
