@@ -183,9 +183,7 @@ class _ProductsPageState extends State<ProductsPage> {
                       // Show empty state when there are no products and not loading
                       if (state.products.isEmpty && !state.isLoading)
                         const SliverToBoxAdapter(
-                          child: Center(
-                            child: Text('No products available'),
-                          ),
+                          child: Center(child: Text('No products available')),
                         ),
                       if (state.isShowProductLoader)
                         const SliverPadding(
