@@ -1,8 +1,9 @@
 import 'package:carousel_slider/carousel_controller.dart';
-import 'package:clean_architecture_test/core/presentation/widgets/image_box.dart';
+import 'package:clean_architecture_test/features/auth/presentation/widgets/user_avatar.dart';
 import 'package:clean_architecture_test/features/users/presentation/bloc/users_bloc.dart';
 import 'package:clean_architecture_test/features/users/presentation/bloc/users_event.dart';
 import 'package:clean_architecture_test/features/users/presentation/bloc/users_state.dart';
+import 'package:clean_architecture_test/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,6 +33,10 @@ class _UserPageState extends State<UserPage> {
       color: theme.scaffoldBackgroundColor,
       child: BlocBuilder<UsersBloc, UsersState>(
         builder: (context, state) {
+          final avatar = state.user?.avatar ?? '';
+          final name = state.user?.name ?? '';
+          final firstName = AppUtils.getFirstName(name);
+          final lastName = AppUtils.getLastName(name);
           return state.isUserLoading
               ? const Center(child: CircularProgressIndicator())
               : Padding(
@@ -41,7 +46,12 @@ class _UserPageState extends State<UserPage> {
                     child: Column(
                       spacing: 24.0,
                       children: [
-                        ImageBox(imageUrl: state.user?.avatar ?? ''),
+                        UserAvatar(
+                          avatar: avatar,
+                          size: 120.0,
+                          firstName: firstName,
+                          lastName: lastName,
+                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           spacing: 8.0,

@@ -21,7 +21,7 @@ class CategoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 160.0,
+      height: 170.0,
       child: ScrollConfiguration(
         behavior: ScrollConfiguration.of(context).copyWith(
           dragDevices: {PointerDeviceKind.touch, PointerDeviceKind.mouse},
@@ -83,15 +83,15 @@ class ListItem extends StatelessWidget {
         width: 120.0,
         child: Column(
           spacing: 8.0,
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
               child: SizedBox(
                 height: 104.0,
-                child: ImageBox(imageUrl: category.image, fit: BoxFit.fill),
+                width: 104.0,
+                child: ImageBox(imageUrl: category.image, fit: BoxFit.cover),
               ),
             ),
             Text(
@@ -101,7 +101,7 @@ class ListItem extends StatelessWidget {
               ),
               softWrap: true,
               overflow: TextOverflow.ellipsis,
-              maxLines: 1,
+              maxLines: 2,
             ),
           ],
         ),

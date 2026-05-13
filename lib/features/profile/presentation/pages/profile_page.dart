@@ -1,5 +1,6 @@
 import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_event.dart';
 import 'package:clean_architecture_test/features/auth/presentation/widgets/user_avatar.dart';
+import 'package:clean_architecture_test/utils.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,6 +42,10 @@ class _ProfilePageState extends State<ProfilePage> {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         if (state.status == AuthStatus.authenticated) {
+          final avatar = state.user?.avatar ?? '';
+          final name = state.user?.name ?? '';
+          final firstName = AppUtils.getFirstName(name);
+          final lastName = AppUtils.getLastName(name);
           return Center(
             child: Column(
               spacing: 16.0,
@@ -48,8 +53,13 @@ class _ProfilePageState extends State<ProfilePage> {
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                UserAvatar(avatar: state.user?.avatar ?? ''),
-                Text('${state.user?.name}', style: textTheme.headlineSmall),
+                UserAvatar(
+                  avatar: avatar,
+                  size: 90.0,
+                  firstName: firstName,
+                  lastName: lastName,
+                ),
+                Text(name, style: textTheme.headlineSmall),
                 Text(
                   '${'loginScreen.fieldNameEmail'.tr()}: ${state.user?.email}',
                   style: textTheme.bodyLarge,

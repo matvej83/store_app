@@ -4,6 +4,7 @@ import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_blo
 import 'package:clean_architecture_test/features/auth/presentation/widgets/user_avatar.dart';
 import 'package:clean_architecture_test/features/users/presentation/bloc/users_bloc.dart';
 import 'package:clean_architecture_test/features/users/presentation/bloc/users_event.dart';
+import 'package:clean_architecture_test/utils.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -72,6 +73,8 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final firstName = AppUtils.getFirstName(user.name);
+    final lastName = AppUtils.getLastName(user.name);
     return GestureDetector(
       onTap: onTap,
       behavior: HitTestBehavior.translucent,
@@ -81,7 +84,11 @@ class ListItem extends StatelessWidget {
           spacing: 8.0,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            UserAvatar(avatar: user.avatar),
+            UserAvatar(
+              avatar: user.avatar,
+              firstName: firstName,
+              lastName: lastName,
+            ),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
