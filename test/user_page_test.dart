@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:clean_architecture_test/core/presentation/widgets/image_box.dart';
 import 'package:clean_architecture_test/features/auth/domain/entity/user_entity.dart';
 import 'package:clean_architecture_test/features/auth/presentation/widgets/user_avatar.dart';
 import 'package:clean_architecture_test/features/users/presentation/bloc/users_bloc.dart';
