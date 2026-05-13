@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:clean_architecture_test/core/presentation/widgets/image_box.dart';
 import 'package:clean_architecture_test/features/auth/domain/entity/user_entity.dart';
+import 'package:clean_architecture_test/features/auth/presentation/widgets/user_avatar.dart';
 import 'package:clean_architecture_test/features/users/presentation/bloc/users_bloc.dart';
 import 'package:clean_architecture_test/features/users/presentation/bloc/users_event.dart';
 import 'package:clean_architecture_test/features/users/presentation/bloc/users_state.dart';
@@ -81,7 +82,7 @@ void main() {
 
     // Verify that ImageBox is displayed with the correct image URL
     final imageBoxFinder = find.byWidgetPredicate(
-      (widget) => widget is ImageBox && widget.imageUrl == user.avatar,
+      (widget) => widget is UserAvatar && widget.avatar == user.avatar,
     );
 
     expect(imageBoxFinder, findsOneWidget);
