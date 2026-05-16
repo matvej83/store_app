@@ -1,5 +1,6 @@
 import 'package:clean_architecture_test/core/presentation/theme/app_theme.dart';
 import 'package:clean_architecture_test/core/presentation/theme/app_theme_colors.dart';
+import 'package:clean_architecture_test/core/usecases/usecase.dart';
 import 'package:clean_architecture_test/features/theme/cubit/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +18,7 @@ class ThemeCubit extends Cubit<ThemeState> {
   final SetThemeUseCase setThemeUseCase;
 
   Future<void> loadTheme() async {
-    final mode = getThemeUseCase.repository.getTheme();
+    final mode = await getThemeUseCase(NoParams());
     mode.fold(
       (l) {
         emit(
@@ -43,7 +44,7 @@ class ThemeCubit extends Cubit<ThemeState> {
   }
 
   Future<void> changeTheme(AppThemeMode mode) async {
-    await setThemeUseCase.repository.setTheme(mode: mode);
+    await setThemeUseCase(SetThemeParams(mode: mode));
     emit(state.copyWith(theme: _mapToFlutter(mode), mode: mode));
   }
 
