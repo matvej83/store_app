@@ -20,6 +20,9 @@ class AppTheme {
       error: appColors.error,
     ),
     textTheme: TextTheme(
+      headlineLarge: TextStyle(color: appColors.primaryText),
+      headlineMedium: TextStyle(color: appColors.primaryText),
+      headlineSmall: TextStyle(color: appColors.primaryText),
       titleLarge: TextStyle(color: appColors.primaryText),
       titleMedium: TextStyle(color: appColors.primaryText),
       titleSmall: TextStyle(color: appColors.primaryText),
@@ -206,6 +209,9 @@ class AppTheme {
       error: appColors.error,
     ),
     textTheme: TextTheme(
+      headlineLarge: TextStyle(color: appColors.primaryText),
+      headlineMedium: TextStyle(color: appColors.primaryText),
+      headlineSmall: TextStyle(color: appColors.primaryText),
       titleLarge: TextStyle(color: appColors.primaryText),
       titleMedium: TextStyle(color: appColors.primaryText),
       titleSmall: TextStyle(color: appColors.primaryText),
