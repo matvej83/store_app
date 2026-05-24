@@ -35,7 +35,7 @@ jobs:
         run: flutter test --no-pub --coverage
 
       - name: Build Flutter Web
-        run: flutter build web --release --web-renderer html --no-source-maps --base-href "/store_app/"
+        run: flutter build web --release --no-source-maps --base-href "/store_app/"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
