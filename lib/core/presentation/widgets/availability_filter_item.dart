@@ -1,5 +1,5 @@
-import 'package:clean_architecture_test/core/domain/entity/availability_filter_entity.dart';
 import 'package:flutter/material.dart';
+import 'package:store_app/core/domain/entity/availability_filter_entity.dart';
 
 class AvailabilityFilterItem extends StatelessWidget {
   const AvailabilityFilterItem({

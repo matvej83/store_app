@@ -1,14 +1,14 @@
-import 'package:clean_architecture_test/core/constants/app_strings.dart';
-import 'package:clean_architecture_test/core/domain/entity/availability_filter_entity.dart';
-import 'package:clean_architecture_test/features/products/presentation/bloc/products_bloc.dart';
-import 'package:clean_architecture_test/features/products/presentation/bloc/products_event.dart';
-import 'package:clean_architecture_test/features/products/presentation/widgets/selected_filters_block.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/core/constants/app_strings.dart';
+import 'package:store_app/core/domain/entity/availability_filter_entity.dart';
+import 'package:store_app/features/products/presentation/bloc/products_bloc.dart';
+import 'package:store_app/features/products/presentation/bloc/products_event.dart';
+import 'package:store_app/features/products/presentation/widgets/selected_filters_block.dart';
 
 import '../bloc/products_state.dart';
 import 'amount_filter_block.dart';

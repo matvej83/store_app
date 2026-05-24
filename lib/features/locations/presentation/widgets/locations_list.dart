@@ -1,10 +1,10 @@
-import 'package:clean_architecture_test/core/presentation/widgets/scroll_up_wrapper.dart';
-import 'package:clean_architecture_test/features/locations/domain/entity/location_entity.dart';
-import 'package:clean_architecture_test/features/locations/presentation/bloc/locations_bloc.dart';
-import 'package:clean_architecture_test/features/locations/presentation/bloc/locations_event.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/core/presentation/widgets/scroll_up_wrapper.dart';
+import 'package:store_app/features/locations/domain/entity/location_entity.dart';
+import 'package:store_app/features/locations/presentation/bloc/locations_bloc.dart';
+import 'package:store_app/features/locations/presentation/bloc/locations_event.dart';
 
 class LocationsList extends StatefulWidget {
   const LocationsList({super.key});

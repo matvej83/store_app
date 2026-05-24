@@ -1,14 +1,14 @@
-import 'package:clean_architecture_test/core/error/failure.dart';
-import 'package:clean_architecture_test/core/error/mapper.dart';
-import 'package:clean_architecture_test/features/auth/data/data_sources/auth_local_data_source.dart';
-import 'package:clean_architecture_test/features/auth/data/data_sources/auth_remote_data_source.dart';
-import 'package:clean_architecture_test/features/auth/data/models/auth_token_model.dart';
-import 'package:clean_architecture_test/features/auth/data/models/user_model.dart';
-import 'package:clean_architecture_test/features/auth/domain/entity/auth_token_entity.dart';
-import 'package:clean_architecture_test/features/auth/domain/entity/user_entity.dart';
-import 'package:clean_architecture_test/features/auth/domain/repository/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/error/failure.dart';
+import 'package:store_app/core/error/mapper.dart';
+import 'package:store_app/features/auth/data/data_sources/auth_local_data_source.dart';
+import 'package:store_app/features/auth/data/data_sources/auth_remote_data_source.dart';
+import 'package:store_app/features/auth/data/models/auth_token_model.dart';
+import 'package:store_app/features/auth/data/models/user_model.dart';
+import 'package:store_app/features/auth/domain/entity/auth_token_entity.dart';
+import 'package:store_app/features/auth/domain/entity/user_entity.dart';
+import 'package:store_app/features/auth/domain/repository/auth_repository.dart';
 
 @LazySingleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {

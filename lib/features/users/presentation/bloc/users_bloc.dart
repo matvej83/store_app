@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:clean_architecture_test/core/usecases/usecase.dart';
-import 'package:clean_architecture_test/features/auth/domain/entity/user_entity.dart';
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_event.dart';
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_state.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/usecases/usecase.dart';
+import 'package:store_app/features/auth/domain/entity/user_entity.dart';
+import 'package:store_app/features/users/presentation/bloc/users_event.dart';
+import 'package:store_app/features/users/presentation/bloc/users_state.dart';
 
 import '../../../../core/error/failure.dart';
 import '../../domain/usecases/fetch_user_usecase.dart';

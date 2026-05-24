@@ -1,8 +1,8 @@
-import 'package:clean_architecture_test/core/error/failure.dart';
-import 'package:clean_architecture_test/features/theme/data/data_sources/theme_local_data_source.dart';
-import 'package:clean_architecture_test/features/theme/domain/entity/app_theme_mode.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/error/failure.dart';
+import 'package:store_app/features/theme/data/data_sources/theme_local_data_source.dart';
+import 'package:store_app/features/theme/domain/entity/app_theme_mode.dart';
 
 import '../../domain/repository/theme_repository.dart';
 

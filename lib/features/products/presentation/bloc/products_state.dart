@@ -1,8 +1,8 @@
-import 'package:clean_architecture_test/core/domain/entity/availability_filter_entity.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/app_image_entity.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/category_entity.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/product_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:store_app/core/domain/entity/availability_filter_entity.dart';
+import 'package:store_app/features/products/domain/entity/app_image_entity.dart';
+import 'package:store_app/features/products/domain/entity/category_entity.dart';
+import 'package:store_app/features/products/domain/entity/product_entity.dart';
 
 part 'products_state.freezed.dart';
 

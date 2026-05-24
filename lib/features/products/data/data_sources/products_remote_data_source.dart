@@ -1,9 +1,9 @@
-import 'package:clean_architecture_test/core/error/exception.dart';
-import 'package:clean_architecture_test/features/products/data/models/category_model.dart';
-import 'package:clean_architecture_test/features/products/data/models/image_model.dart';
-import 'package:clean_architecture_test/features/products/data/models/product_model.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/error/exception.dart';
+import 'package:store_app/features/products/data/models/category_model.dart';
+import 'package:store_app/features/products/data/models/image_model.dart';
+import 'package:store_app/features/products/data/models/product_model.dart';
 
 import '../../domain/entity/app_image_entity.dart';
 

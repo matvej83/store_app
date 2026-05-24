@@ -1,9 +1,9 @@
-import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_event.dart';
-import 'package:clean_architecture_test/features/auth/presentation/widgets/user_avatar.dart';
-import 'package:clean_architecture_test/utils.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_event.dart';
+import 'package:store_app/features/auth/presentation/widgets/user_avatar.dart';
+import 'package:store_app/utils.dart';
 
 import '../../../auth/presentation/bloc/auth_bloc.dart';
 import '../../../auth/presentation/bloc/auth_state.dart';

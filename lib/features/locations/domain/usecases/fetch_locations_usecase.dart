@@ -1,7 +1,7 @@
-import 'package:clean_architecture_test/core/error/failure.dart';
-import 'package:clean_architecture_test/core/usecases/usecase.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/error/failure.dart';
+import 'package:store_app/core/usecases/usecase.dart';
 
 import '../entity/location_entity.dart';
 import '../repository/locations_repository.dart';

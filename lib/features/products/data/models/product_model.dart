@@ -1,10 +1,9 @@
-import 'package:clean_architecture_test/features/products/domain/entity/product_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:store_app/features/products/domain/entity/product_entity.dart';
 
 import 'category_model.dart';
 
 part 'product_model.freezed.dart';
-
 part 'product_model.g.dart';
 
 @freezed

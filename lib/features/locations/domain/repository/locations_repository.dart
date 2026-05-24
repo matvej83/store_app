@@ -1,5 +1,5 @@
-import 'package:clean_architecture_test/core/error/failure.dart';
 import 'package:dartz/dartz.dart';
+import 'package:store_app/core/error/failure.dart';
 
 import '../entity/location_entity.dart';
 

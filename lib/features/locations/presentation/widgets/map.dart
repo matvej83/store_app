@@ -1,11 +1,11 @@
-import 'package:clean_architecture_test/features/locations/domain/entity/location_entity.dart';
-import 'package:clean_architecture_test/features/locations/presentation/bloc/locations_bloc.dart';
-import 'package:clean_architecture_test/features/locations/utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
+import 'package:store_app/features/locations/domain/entity/location_entity.dart';
+import 'package:store_app/features/locations/presentation/bloc/locations_bloc.dart';
+import 'package:store_app/features/locations/utils.dart';
 
 import '../../../../core/di/injection.dart';
 import '../../../../core/services/tile_cache/tile_cache_service.dart';

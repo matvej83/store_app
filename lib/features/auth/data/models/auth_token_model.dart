@@ -1,8 +1,7 @@
-import 'package:clean_architecture_test/features/auth/domain/entity/auth_token_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:store_app/features/auth/domain/entity/auth_token_entity.dart';
 
 part 'auth_token_model.freezed.dart';
-
 part 'auth_token_model.g.dart';
 
 @freezed

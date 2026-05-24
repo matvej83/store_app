@@ -1,8 +1,8 @@
-import 'package:clean_architecture_test/core/error/exception.dart';
-import 'package:clean_architecture_test/features/auth/data/models/auth_token_model.dart';
-import 'package:clean_architecture_test/features/auth/data/models/user_model.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/error/exception.dart';
+import 'package:store_app/features/auth/data/models/auth_token_model.dart';
+import 'package:store_app/features/auth/data/models/user_model.dart';
 
 abstract class AuthRemoteDataSource {
   Future<AuthTokenModel?> login(String email, String password);

@@ -1,5 +1,5 @@
-import 'package:clean_architecture_test/core/presentation/widgets/scroll_up_button.dart';
 import 'package:flutter/material.dart';
+import 'package:store_app/core/presentation/widgets/scroll_up_button.dart';
 
 class ScrollUpWrapper extends StatelessWidget {
   const ScrollUpWrapper({

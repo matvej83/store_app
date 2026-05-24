@@ -1,16 +1,16 @@
 import 'dart:async';
 
-import 'package:clean_architecture_test/core/error/failure.dart';
-import 'package:clean_architecture_test/core/usecases/usecase.dart';
-import 'package:clean_architecture_test/features/auth/domain/usecases/check_auth_usecase.dart';
-import 'package:clean_architecture_test/features/auth/domain/usecases/get_user_profile_usecase.dart';
-import 'package:clean_architecture_test/features/auth/domain/usecases/login_usecase.dart';
-import 'package:clean_architecture_test/features/auth/domain/usecases/logout_usecase.dart';
-import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_event.dart';
-import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_state.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/error/failure.dart';
+import 'package:store_app/core/usecases/usecase.dart';
+import 'package:store_app/features/auth/domain/usecases/check_auth_usecase.dart';
+import 'package:store_app/features/auth/domain/usecases/get_user_profile_usecase.dart';
+import 'package:store_app/features/auth/domain/usecases/login_usecase.dart';
+import 'package:store_app/features/auth/domain/usecases/logout_usecase.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_event.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_state.dart';
 
 @lazySingleton
 class AuthBloc extends Bloc<AuthEvent, AuthState> {

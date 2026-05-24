@@ -1,6 +1,6 @@
-import 'package:clean_architecture_test/core/error/failure.dart';
-import 'package:clean_architecture_test/features/auth/domain/entity/user_entity.dart';
 import 'package:dartz/dartz.dart';
+import 'package:store_app/core/error/failure.dart';
+import 'package:store_app/features/auth/domain/entity/user_entity.dart';
 
 import '../entity/auth_token_entity.dart';
 

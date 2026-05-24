@@ -1,6 +1,6 @@
-import 'package:clean_architecture_test/features/products/domain/entity/category_entity.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:store_app/features/products/domain/entity/category_entity.dart';
 
 import '../../../../core/presentation/widgets/image_box.dart';
 

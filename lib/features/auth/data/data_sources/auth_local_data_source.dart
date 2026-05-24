@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:clean_architecture_test/features/auth/data/models/auth_token_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:store_app/features/auth/data/models/auth_token_model.dart';
 
 abstract class AuthLocalDataSource {
   Future<void> cacheToken(AuthTokenModel token);

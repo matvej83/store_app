@@ -1,14 +1,14 @@
-import 'package:clean_architecture_test/core/error/failure.dart';
-import 'package:clean_architecture_test/core/error/mapper.dart';
-import 'package:clean_architecture_test/features/products/data/data_sources/products_remote_data_source.dart';
-import 'package:clean_architecture_test/features/products/data/models/image_model.dart';
-import 'package:clean_architecture_test/features/products/data/models/product_model.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/category_entity.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/image_entity.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/product_entity.dart';
-import 'package:clean_architecture_test/features/products/domain/repository/products_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/error/failure.dart';
+import 'package:store_app/core/error/mapper.dart';
+import 'package:store_app/features/products/data/data_sources/products_remote_data_source.dart';
+import 'package:store_app/features/products/data/models/image_model.dart';
+import 'package:store_app/features/products/data/models/product_model.dart';
+import 'package:store_app/features/products/domain/entity/category_entity.dart';
+import 'package:store_app/features/products/domain/entity/image_entity.dart';
+import 'package:store_app/features/products/domain/entity/product_entity.dart';
+import 'package:store_app/features/products/domain/repository/products_repository.dart';
 
 import '../../domain/entity/app_image_entity.dart';
 import '../models/category_model.dart';

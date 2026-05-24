@@ -1,6 +1,6 @@
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/features/users/presentation/bloc/users_event.dart';
 
 import '../bloc/users_bloc.dart';
 import '../bloc/users_state.dart';

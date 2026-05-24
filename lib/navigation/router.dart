@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:clean_architecture_test/features/locations/presentation/pages/locations_page.dart';
-import 'package:clean_architecture_test/features/products/presentation/pages/add_category_page.dart';
-import 'package:clean_architecture_test/features/products/presentation/pages/add_product_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/features/locations/presentation/pages/locations_page.dart';
+import 'package:store_app/features/products/presentation/pages/add_category_page.dart';
+import 'package:store_app/features/products/presentation/pages/add_product_page.dart';
 
 import '../features/auth/presentation/bloc/auth_bloc.dart';
 import '../features/auth/presentation/bloc/auth_state.dart';

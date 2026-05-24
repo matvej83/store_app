@@ -1,14 +1,14 @@
 import 'dart:async';
 
-import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:clean_architecture_test/features/locations/presentation/bloc/locations_bloc.dart';
-import 'package:clean_architecture_test/features/theme/cubit/state.dart';
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_bloc.dart';
-import 'package:clean_architecture_test/navigation/pages.dart';
-import 'package:clean_architecture_test/navigation/router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:store_app/features/locations/presentation/bloc/locations_bloc.dart';
+import 'package:store_app/features/theme/cubit/state.dart';
+import 'package:store_app/features/users/presentation/bloc/users_bloc.dart';
+import 'package:store_app/navigation/pages.dart';
+import 'package:store_app/navigation/router.dart';
 
 import 'core/di/injection.dart';
 import 'core/services/auth_session_manager.dart';

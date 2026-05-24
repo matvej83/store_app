@@ -1,8 +1,7 @@
-import 'package:clean_architecture_test/core/error/exception.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/error/exception.dart';
 
 import '../../../auth/data/models/user_model.dart';
 

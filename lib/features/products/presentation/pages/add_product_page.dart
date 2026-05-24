@@ -1,12 +1,12 @@
-import 'package:clean_architecture_test/core/presentation/widgets/app_message.dart';
-import 'package:clean_architecture_test/features/products/data/models/product_model.dart';
-import 'package:clean_architecture_test/features/products/presentation/bloc/products_bloc.dart';
-import 'package:clean_architecture_test/features/products/presentation/bloc/products_event.dart';
-import 'package:clean_architecture_test/features/products/presentation/bloc/products_state.dart';
-import 'package:clean_architecture_test/features/products/presentation/widgets/category_search.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/core/presentation/widgets/app_message.dart';
+import 'package:store_app/features/products/data/models/product_model.dart';
+import 'package:store_app/features/products/presentation/bloc/products_bloc.dart';
+import 'package:store_app/features/products/presentation/bloc/products_event.dart';
+import 'package:store_app/features/products/presentation/bloc/products_state.dart';
+import 'package:store_app/features/products/presentation/widgets/category_search.dart';
 
 import '../../../../core/presentation/widgets/app_text_form_field.dart';
 import '../widgets/categories_list.dart';

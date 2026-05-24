@@ -1,19 +1,19 @@
 import 'dart:async';
 
-import 'package:clean_architecture_test/features/auth/domain/entity/user_entity.dart';
-import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_event.dart';
-import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_state.dart';
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_bloc.dart';
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_event.dart';
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_state.dart';
-import 'package:clean_architecture_test/features/users/presentation/pages/users_page.dart';
-import 'package:clean_architecture_test/features/users/presentation/widgets/users_list.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:store_app/features/auth/domain/entity/user_entity.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_event.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_state.dart';
+import 'package:store_app/features/users/presentation/bloc/users_bloc.dart';
+import 'package:store_app/features/users/presentation/bloc/users_event.dart';
+import 'package:store_app/features/users/presentation/bloc/users_state.dart';
+import 'package:store_app/features/users/presentation/pages/users_page.dart';
+import 'package:store_app/features/users/presentation/widgets/users_list.dart';
 
 class MockUsersBloc extends Mock implements UsersBloc {}
 

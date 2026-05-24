@@ -1,6 +1,6 @@
-import 'package:clean_architecture_test/features/profile/utils.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:store_app/features/profile/utils.dart';
 
 import '../../../../core/presentation/widgets/custom_dropdown_menu.dart';
 

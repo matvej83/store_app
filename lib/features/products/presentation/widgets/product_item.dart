@@ -1,6 +1,6 @@
-import 'package:clean_architecture_test/core/presentation/widgets/image_box.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/core/presentation/widgets/image_box.dart';
 
 import '../../../../navigation/pages.dart';
 import '../../domain/entity/product_entity.dart';

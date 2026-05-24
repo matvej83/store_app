@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:clean_architecture_test/core/presentation/widgets/image_loader.dart';
 import 'package:flutter/material.dart';
+import 'package:store_app/core/presentation/widgets/image_loader.dart';
 
 import 'image_placeholder.dart';
 

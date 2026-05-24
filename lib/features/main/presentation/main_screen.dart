@@ -1,12 +1,12 @@
-import 'package:clean_architecture_test/features/locations/presentation/bloc/locations_bloc.dart';
-import 'package:clean_architecture_test/features/locations/presentation/bloc/locations_event.dart';
-import 'package:clean_architecture_test/features/main/presentation/widgets/bottom_nav_bar.dart';
-import 'package:clean_architecture_test/features/main/utils.dart';
-import 'package:clean_architecture_test/features/products/presentation/bloc/products_bloc.dart';
-import 'package:clean_architecture_test/features/products/presentation/bloc/products_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/features/locations/presentation/bloc/locations_bloc.dart';
+import 'package:store_app/features/locations/presentation/bloc/locations_event.dart';
+import 'package:store_app/features/main/presentation/widgets/bottom_nav_bar.dart';
+import 'package:store_app/features/main/utils.dart';
+import 'package:store_app/features/products/presentation/bloc/products_bloc.dart';
+import 'package:store_app/features/products/presentation/bloc/products_event.dart';
 
 import '../../../core/di/injection.dart';
 import '../../../core/services/geolocation_service_interface.dart';
