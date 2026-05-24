@@ -62,7 +62,7 @@ class _CategorySearchState extends State<CategorySearch> {
                 position: offsetAnimation,
                 child: SizeTransition(
                   sizeFactor: animation,
-                  axisAlignment: -1.0,
+                  alignment: const Alignment(0.0, -1.0),
                   child: child,
                 ),
               ),
