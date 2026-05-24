@@ -1,8 +1,7 @@
-import 'package:clean_architecture_test/features/products/domain/entity/image_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:store_app/features/products/domain/entity/image_entity.dart';
 
 part 'image_model.freezed.dart';
-
 part 'image_model.g.dart';
 
 @freezed

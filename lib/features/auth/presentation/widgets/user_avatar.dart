@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:clean_architecture_test/core/presentation/widgets/avatar_placeholder.dart';
 import 'package:flutter/material.dart';
+import 'package:store_app/core/presentation/widgets/avatar_placeholder.dart';
 
 class UserAvatar extends StatelessWidget {
   const UserAvatar({

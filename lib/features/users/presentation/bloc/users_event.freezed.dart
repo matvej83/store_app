@@ -11,58 +11,138 @@ part of 'users_event.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
+
 /// @nodoc
 mixin _$UsersEvent {
 
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is UsersEvent);
+  }
 
 
+  @override
+  int get hashCode => runtimeType.hashCode;
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UsersEvent);
-}
-
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'UsersEvent()';
-}
+  @override
+  String toString() {
+    return 'UsersEvent()';
+  }
 
 
 }
 
 /// @nodoc
-class $UsersEventCopyWith<$Res>  {
-$UsersEventCopyWith(UsersEvent _, $Res Function(UsersEvent) __);
+class $UsersEventCopyWith<$Res> {
+  $UsersEventCopyWith(UsersEvent _, $Res Function(UsersEvent) __);
 }
 
 
 /// Adds pattern-matching-related methods to [UsersEvent].
 extension UsersEventPatterns on UsersEvent {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( UsersFetched value)?  usersFetched,TResult Function( MoreUsersLoaded value)?  moreUsersLoaded,TResult Function( UserFetched value)?  userFetched,required TResult orElse(),}){
+  @optionalTypeArgs TResult maybeMap
+
+  <
+
+  TResult
+
+  extends
+
+  Object?
+
+  >
+
+  (
+
+  {
+
+  TResult
+
+  Function
+
+  (
+
+  UsersFetched
+
+  value
+
+  )
+
+  ?
+
+  usersFetched
+
+  ,
+
+  TResult
+
+  Function
+
+  (
+
+  MoreUsersLoaded
+
+  value
+
+  )
+
+  ?
+
+  moreUsersLoaded
+
+  ,
+
+  TResult
+
+  Function
+
+  (
+
+  UserFetched
+
+  value
+
+  )
+
+  ?
+
+  userFetched
+
+  ,
+
+  required
+
+  TResult
+
+  orElse
+
+  (
+
+  )
+
+  ,
+}){
 final _that = this;
 switch (_that) {
 case UsersFetched() when usersFetched != null:
 return usersFetched(_that);case MoreUsersLoaded() when moreUsersLoaded != null:
 return moreUsersLoaded(_that);case UserFetched() when userFetched != null:
 return userFetched(_that);case _:
-  return orElse();
+return orElse();
 
 }
 }
@@ -79,17 +159,22 @@ return userFetched(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( UsersFetched value)  usersFetched,required TResult Function( MoreUsersLoaded value)  moreUsersLoaded,required TResult Function( UserFetched value)  userFetched,}){
-final _that = this;
-switch (_that) {
-case UsersFetched():
-return usersFetched(_that);case MoreUsersLoaded():
-return moreUsersLoaded(_that);case UserFetched():
-return userFetched(_that);case _:
-  throw StateError('Unexpected subclass');
+@optionalTypeArgs
+TResult map<TResult extends Object?>(
+    {required TResult Function( UsersFetched value) usersFetched, required TResult Function( MoreUsersLoaded value) moreUsersLoaded, required TResult Function( UserFetched value) userFetched,}) {
+  final _that = this;
+  switch (_that) {
+    case UsersFetched():
+      return usersFetched(_that);
+    case MoreUsersLoaded():
+      return moreUsersLoaded(_that);
+    case UserFetched():
+      return userFetched(_that);
+    case _:
+      throw StateError('Unexpected subclass');
+  }
+}
 
-}
-}
 /// A variant of `map` that fallback to returning `null`.
 ///
 /// It is equivalent to doing:
@@ -102,17 +187,22 @@ return userFetched(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( UsersFetched value)?  usersFetched,TResult? Function( MoreUsersLoaded value)?  moreUsersLoaded,TResult? Function( UserFetched value)?  userFetched,}){
-final _that = this;
-switch (_that) {
-case UsersFetched() when usersFetched != null:
-return usersFetched(_that);case MoreUsersLoaded() when moreUsersLoaded != null:
-return moreUsersLoaded(_that);case UserFetched() when userFetched != null:
-return userFetched(_that);case _:
-  return null;
+@optionalTypeArgs
+TResult? mapOrNull<TResult extends Object?>(
+    {TResult? Function( UsersFetched value)? usersFetched, TResult? Function( MoreUsersLoaded value)? moreUsersLoaded, TResult? Function( UserFetched value)? userFetched,}) {
+  final _that = this;
+  switch (_that) {
+    case UsersFetched() when usersFetched != null:
+      return usersFetched(_that);
+    case MoreUsersLoaded() when moreUsersLoaded != null:
+      return moreUsersLoaded(_that);
+    case UserFetched() when userFetched != null:
+      return userFetched(_that);
+    case _:
+      return null;
+  }
+}
 
-}
-}
 /// A variant of `when` that fallback to an `orElse` callback.
 ///
 /// It is equivalent to doing:
@@ -125,13 +215,42 @@ return userFetched(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  usersFetched,TResult Function()?  moreUsersLoaded,TResult Function( String id)?  userFetched,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen
+<
+TResult extends Object?>(
+{
+TResult
+Function
+(
+)
+?
+usersFetched
+,
+TResult
+Function
+(
+)
+?
+moreUsersLoaded
+,
+TResult
+Function
+(
+String
+id
+)
+?
+userFetched
+,
+required
+TResult
+orElse(),}) {final _that = this;
 switch (_that) {
 case UsersFetched() when usersFetched != null:
 return usersFetched();case MoreUsersLoaded() when moreUsersLoaded != null:
 return moreUsersLoaded();case UserFetched() when userFetched != null:
 return userFetched(_that.id);case _:
-  return orElse();
+return orElse();
 
 }
 }
@@ -148,13 +267,13 @@ return userFetched(_that.id);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  usersFetched,required TResult Function()  moreUsersLoaded,required TResult Function( String id)  userFetched,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function() usersFetched,required TResult Function() moreUsersLoaded,required TResult Function( String id) userFetched,}) {final _that = this;
 switch (_that) {
 case UsersFetched():
 return usersFetched();case MoreUsersLoaded():
 return moreUsersLoaded();case UserFetched():
 return userFetched(_that.id);case _:
-  throw StateError('Unexpected subclass');
+throw StateError('Unexpected subclass');
 
 }
 }
@@ -170,13 +289,13 @@ return userFetched(_that.id);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  usersFetched,TResult? Function()?  moreUsersLoaded,TResult? Function( String id)?  userFetched,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()? usersFetched,TResult? Function()? moreUsersLoaded,TResult? Function( String id)? userFetched,}) {final _that = this;
 switch (_that) {
 case UsersFetched() when usersFetched != null:
 return usersFetched();case MoreUsersLoaded() when moreUsersLoaded != null:
 return moreUsersLoaded();case UserFetched() when userFetched != null:
 return userFetched(_that.id);case _:
-  return null;
+return null;
 
 }
 }
@@ -187,17 +306,12 @@ return userFetched(_that.id);case _:
 
 
 class UsersFetched implements UsersEvent {
-  const UsersFetched();
-  
-
-
-
-
+const UsersFetched();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UsersFetched);
+return identical(this, other) || (other.runtimeType == runtimeType&&other is UsersFetched);
 }
 
 
@@ -206,7 +320,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'UsersEvent.usersFetched()';
+return 'UsersEvent.usersFetched()';
 }
 
 
@@ -218,13 +332,11 @@ $UsersFetchedCopyWith(UsersFetched _, $Res Function(UsersFetched) __);
 }
 /// @nodoc
 class _$UsersFetchedCopyWithImpl<$Res>
-    implements $UsersFetchedCopyWith<$Res> {
-  _$UsersFetchedCopyWithImpl(this._self, this._then);
+implements $UsersFetchedCopyWith<$Res> {
+_$UsersFetchedCopyWithImpl(this._self, this._then);
 
-  final UsersFetched _self;
-  final $Res Function(UsersFetched) _then;
-
-
+final UsersFetched _self;
+final $Res Function(UsersFetched) _then;
 
 
 }
@@ -233,17 +345,12 @@ class _$UsersFetchedCopyWithImpl<$Res>
 
 
 class MoreUsersLoaded implements UsersEvent {
-  const MoreUsersLoaded();
-  
-
-
-
-
+const MoreUsersLoaded();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MoreUsersLoaded);
+return identical(this, other) || (other.runtimeType == runtimeType&&other is MoreUsersLoaded);
 }
 
 
@@ -252,7 +359,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'UsersEvent.moreUsersLoaded()';
+return 'UsersEvent.moreUsersLoaded()';
 }
 
 
@@ -264,13 +371,11 @@ $MoreUsersLoadedCopyWith(MoreUsersLoaded _, $Res Function(MoreUsersLoaded) __);
 }
 /// @nodoc
 class _$MoreUsersLoadedCopyWithImpl<$Res>
-    implements $MoreUsersLoadedCopyWith<$Res> {
-  _$MoreUsersLoadedCopyWithImpl(this._self, this._then);
+implements $MoreUsersLoadedCopyWith<$Res> {
+_$MoreUsersLoadedCopyWithImpl(this._self, this._then);
 
-  final MoreUsersLoaded _self;
-  final $Res Function(MoreUsersLoaded) _then;
-
-
+final MoreUsersLoaded _self;
+final $Res Function(MoreUsersLoaded) _then;
 
 
 }
@@ -279,10 +384,10 @@ class _$MoreUsersLoadedCopyWithImpl<$Res>
 
 
 class UserFetched implements UsersEvent {
-  const UserFetched(this.id);
-  
+const UserFetched(this.id);
 
- final  String id;
+
+final String id;
 
 /// Create a copy of UsersEvent
 /// with the given fields replaced by the non-null parameter values.
@@ -291,10 +396,9 @@ class UserFetched implements UsersEvent {
 $UserFetchedCopyWith<UserFetched> get copyWith => _$UserFetchedCopyWithImpl<UserFetched>(this, _$identity);
 
 
-
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserFetched&&(identical(other.id, id) || other.id == id));
+return identical(this, other) || (other.runtimeType == runtimeType&&other is UserFetched&&(identical(other.id, id) || other.id == id));
 }
 
 
@@ -303,7 +407,7 @@ int get hashCode => Object.hash(runtimeType,id);
 
 @override
 String toString() {
-  return 'UsersEvent.userFetched(id: $id)';
+return 'UsersEvent.userFetched(id: $id)';
 }
 
 
@@ -311,31 +415,29 @@ String toString() {
 
 /// @nodoc
 abstract mixin class $UserFetchedCopyWith<$Res> implements $UsersEventCopyWith<$Res> {
-  factory $UserFetchedCopyWith(UserFetched value, $Res Function(UserFetched) _then) = _$UserFetchedCopyWithImpl;
+factory $UserFetchedCopyWith(UserFetched value, $Res Function(UserFetched) _then) = _$UserFetchedCopyWithImpl;
 @useResult
 $Res call({
- String id
+String id
 });
-
-
 
 
 }
 /// @nodoc
 class _$UserFetchedCopyWithImpl<$Res>
-    implements $UserFetchedCopyWith<$Res> {
-  _$UserFetchedCopyWithImpl(this._self, this._then);
+implements $UserFetchedCopyWith<$Res> {
+_$UserFetchedCopyWithImpl(this._self, this._then);
 
-  final UserFetched _self;
-  final $Res Function(UserFetched) _then;
+final UserFetched _self;
+final $Res Function(UserFetched) _then;
 
 /// Create a copy of UsersEvent
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? id = null,}) {
-  return _then(UserFetched(
+return _then(UserFetched(
 null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,
-  ));
+));
 }
 
 

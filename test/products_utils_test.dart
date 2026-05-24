@@ -1,6 +1,6 @@
-import 'package:clean_architecture_test/features/products/domain/entity/category_entity.dart';
-import 'package:clean_architecture_test/features/products/utils.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:store_app/features/products/domain/entity/category_entity.dart';
+import 'package:store_app/features/products/utils.dart';
 
 void main() {
   group('ProductsUtils.filterCategoriesBySearchTerm', () {

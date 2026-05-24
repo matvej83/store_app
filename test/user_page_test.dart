@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:clean_architecture_test/features/auth/domain/entity/user_entity.dart';
-import 'package:clean_architecture_test/features/auth/presentation/widgets/user_avatar.dart';
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_bloc.dart';
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_event.dart';
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_state.dart';
-import 'package:clean_architecture_test/features/users/presentation/pages/user_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:store_app/features/auth/domain/entity/user_entity.dart';
+import 'package:store_app/features/auth/presentation/widgets/user_avatar.dart';
+import 'package:store_app/features/users/presentation/bloc/users_bloc.dart';
+import 'package:store_app/features/users/presentation/bloc/users_event.dart';
+import 'package:store_app/features/users/presentation/bloc/users_state.dart';
+import 'package:store_app/features/users/presentation/pages/user_page.dart';
 
 // Mocks
 class MockUsersBloc extends Mock implements UsersBloc {}

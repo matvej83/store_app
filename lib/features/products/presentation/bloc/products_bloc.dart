@@ -1,22 +1,22 @@
 import 'dart:async';
 
-import 'package:clean_architecture_test/core/domain/entity/availability_filter_entity.dart';
-import 'package:clean_architecture_test/core/usecases/usecase.dart';
-import 'package:clean_architecture_test/features/products/data/models/category_model.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/product_entity.dart';
-import 'package:clean_architecture_test/features/products/domain/usecases/create_category_usecase.dart';
-import 'package:clean_architecture_test/features/products/domain/usecases/create_product_usecase.dart';
-import 'package:clean_architecture_test/features/products/domain/usecases/delete_product_usecase.dart';
-import 'package:clean_architecture_test/features/products/domain/usecases/fetch_categories_usecase.dart';
-import 'package:clean_architecture_test/features/products/domain/usecases/fetch_products_usecase.dart';
-import 'package:clean_architecture_test/features/products/domain/usecases/fetch_related_by_id_usecase.dart';
-import 'package:clean_architecture_test/features/products/domain/usecases/upload_image_usecase.dart';
-import 'package:clean_architecture_test/features/products/presentation/bloc/products_event.dart';
-import 'package:clean_architecture_test/features/products/presentation/bloc/products_state.dart';
-import 'package:clean_architecture_test/features/products/utils.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/domain/entity/availability_filter_entity.dart';
+import 'package:store_app/core/usecases/usecase.dart';
+import 'package:store_app/features/products/data/models/category_model.dart';
+import 'package:store_app/features/products/domain/entity/product_entity.dart';
+import 'package:store_app/features/products/domain/usecases/create_category_usecase.dart';
+import 'package:store_app/features/products/domain/usecases/create_product_usecase.dart';
+import 'package:store_app/features/products/domain/usecases/delete_product_usecase.dart';
+import 'package:store_app/features/products/domain/usecases/fetch_categories_usecase.dart';
+import 'package:store_app/features/products/domain/usecases/fetch_products_usecase.dart';
+import 'package:store_app/features/products/domain/usecases/fetch_related_by_id_usecase.dart';
+import 'package:store_app/features/products/domain/usecases/upload_image_usecase.dart';
+import 'package:store_app/features/products/presentation/bloc/products_event.dart';
+import 'package:store_app/features/products/presentation/bloc/products_state.dart';
+import 'package:store_app/features/products/utils.dart';
 
 import '../../../../core/error/failure.dart';
 import '../../data/models/product_model.dart';

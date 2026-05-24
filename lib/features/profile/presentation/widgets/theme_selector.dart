@@ -1,8 +1,8 @@
-import 'package:clean_architecture_test/core/presentation/widgets/custom_dropdown_menu.dart';
-import 'package:clean_architecture_test/features/theme/cubit/cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/core/presentation/widgets/custom_dropdown_menu.dart';
+import 'package:store_app/features/theme/cubit/cubit.dart';
 
 import '../../../theme/domain/entity/app_theme_mode.dart';
 

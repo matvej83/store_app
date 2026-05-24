@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:clean_architecture_test/features/auth/data/models/auth_token_model.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/features/auth/data/models/auth_token_model.dart';
 
 import '../../features/auth/data/data_sources/auth_local_data_source.dart';
 import '../error/exception.dart';

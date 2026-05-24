@@ -1,10 +1,10 @@
-import 'package:clean_architecture_test/core/error/failure.dart';
-import 'package:clean_architecture_test/core/usecases/usecase.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/app_image_entity.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/image_entity.dart';
-import 'package:clean_architecture_test/features/products/domain/repository/products_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/error/failure.dart';
+import 'package:store_app/core/usecases/usecase.dart';
+import 'package:store_app/features/products/domain/entity/app_image_entity.dart';
+import 'package:store_app/features/products/domain/entity/image_entity.dart';
+import 'package:store_app/features/products/domain/repository/products_repository.dart';
 
 @lazySingleton
 class UploadImageUseCase implements UseCase<ImageEntity, UploadImageParams> {

@@ -1,11 +1,11 @@
 import 'package:carousel_slider/carousel_controller.dart';
-import 'package:clean_architecture_test/features/auth/presentation/widgets/user_avatar.dart';
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_bloc.dart';
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_event.dart';
-import 'package:clean_architecture_test/features/users/presentation/bloc/users_state.dart';
-import 'package:clean_architecture_test/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/features/auth/presentation/widgets/user_avatar.dart';
+import 'package:store_app/features/users/presentation/bloc/users_bloc.dart';
+import 'package:store_app/features/users/presentation/bloc/users_event.dart';
+import 'package:store_app/features/users/presentation/bloc/users_state.dart';
+import 'package:store_app/utils.dart';
 
 class UserPage extends StatefulWidget {
   const UserPage({super.key, required this.id});

@@ -1,5 +1,5 @@
-import 'package:clean_architecture_test/core/presentation/widgets/image_box.dart';
 import 'package:flutter/material.dart';
+import 'package:store_app/core/presentation/widgets/image_box.dart';
 
 class CarouselSliderItem extends StatelessWidget {
   const CarouselSliderItem({super.key, this.image, this.current, this.total});

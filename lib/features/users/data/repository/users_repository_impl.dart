@@ -1,7 +1,7 @@
-import 'package:clean_architecture_test/core/error/failure.dart';
-import 'package:clean_architecture_test/core/error/mapper.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:store_app/core/error/failure.dart';
+import 'package:store_app/core/error/mapper.dart';
 
 import '../../../auth/data/models/user_model.dart';
 import '../../../auth/domain/entity/user_entity.dart';

@@ -1,9 +1,9 @@
-import 'package:clean_architecture_test/core/presentation/theme/app_theme.dart';
-import 'package:clean_architecture_test/core/presentation/theme/app_theme_colors.dart';
-import 'package:clean_architecture_test/features/theme/cubit/cubit.dart';
-import 'package:clean_architecture_test/features/theme/domain/entity/app_theme_mode.dart';
-import 'package:clean_architecture_test/features/theme/domain/repository/theme_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:store_app/core/presentation/theme/app_theme.dart';
+import 'package:store_app/core/presentation/theme/app_theme_colors.dart';
+import 'package:store_app/features/theme/cubit/cubit.dart';
+import 'package:store_app/features/theme/domain/entity/app_theme_mode.dart';
+import 'package:store_app/features/theme/domain/repository/theme_repository.dart';
 
 /// Provider for theme management that can be used across the application.
 ///
@@ -20,6 +20,7 @@ class ThemeProvider with ChangeNotifier {
   ThemeData? _currentTheme;
 
   AppThemeMode get currentMode => _currentMode;
+
   ThemeData? get currentTheme => _currentTheme;
 
   /// Loads the saved theme from repository.

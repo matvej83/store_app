@@ -1,12 +1,12 @@
-import 'package:clean_architecture_test/core/presentation/widgets/app_dialog.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/product_entity.dart';
-import 'package:clean_architecture_test/features/products/presentation/bloc/products_bloc.dart';
-import 'package:clean_architecture_test/features/products/presentation/bloc/products_event.dart';
-import 'package:clean_architecture_test/features/products/presentation/widgets/product_item.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:store_app/core/presentation/widgets/app_dialog.dart';
+import 'package:store_app/features/products/domain/entity/product_entity.dart';
+import 'package:store_app/features/products/presentation/bloc/products_bloc.dart';
+import 'package:store_app/features/products/presentation/bloc/products_event.dart';
+import 'package:store_app/features/products/presentation/widgets/product_item.dart';
 
 class ProductsList extends StatelessWidget {
   const ProductsList({super.key, required this.products});

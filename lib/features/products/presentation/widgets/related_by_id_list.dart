@@ -1,7 +1,7 @@
-import 'package:clean_architecture_test/features/products/presentation/widgets/product_item.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/features/products/presentation/widgets/product_item.dart';
 
 import '../bloc/products_bloc.dart';
 

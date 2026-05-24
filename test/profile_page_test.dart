@@ -1,20 +1,20 @@
 import 'dart:async';
 
-import 'package:clean_architecture_test/features/auth/domain/entity/user_entity.dart';
-import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_event.dart';
-import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_state.dart';
-import 'package:clean_architecture_test/features/auth/presentation/widgets/user_avatar.dart';
-import 'package:clean_architecture_test/features/profile/presentation/pages/profile_page.dart';
-import 'package:clean_architecture_test/features/profile/presentation/widgets/language_selector.dart';
-import 'package:clean_architecture_test/features/profile/presentation/widgets/theme_selector.dart';
-import 'package:clean_architecture_test/features/theme/cubit/cubit.dart';
-import 'package:clean_architecture_test/features/theme/cubit/state.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:store_app/features/auth/domain/entity/user_entity.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_event.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_state.dart';
+import 'package:store_app/features/auth/presentation/widgets/user_avatar.dart';
+import 'package:store_app/features/profile/presentation/pages/profile_page.dart';
+import 'package:store_app/features/profile/presentation/widgets/language_selector.dart';
+import 'package:store_app/features/profile/presentation/widgets/theme_selector.dart';
+import 'package:store_app/features/theme/cubit/cubit.dart';
+import 'package:store_app/features/theme/cubit/state.dart';
 
 // Mocks
 class MockAuthBloc extends Mock implements AuthBloc {}

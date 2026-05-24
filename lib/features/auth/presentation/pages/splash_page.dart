@@ -1,8 +1,8 @@
-import 'package:clean_architecture_test/core/constants/app_strings.dart';
-import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:clean_architecture_test/features/auth/presentation/bloc/auth_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/core/constants/app_strings.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:store_app/features/auth/presentation/bloc/auth_event.dart';
 
 import '../../../../core/presentation/widgets/infinite_scroll_background.dart';
 

@@ -1,6 +1,6 @@
-import 'package:clean_architecture_test/features/locations/domain/entity/location_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:store_app/features/locations/domain/entity/location_entity.dart';
 
 part 'locations_event.freezed.dart';
 

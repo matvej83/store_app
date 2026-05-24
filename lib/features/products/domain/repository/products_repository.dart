@@ -1,9 +1,9 @@
-import 'package:clean_architecture_test/core/error/failure.dart';
-import 'package:clean_architecture_test/features/products/data/models/category_model.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/category_entity.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/image_entity.dart';
-import 'package:clean_architecture_test/features/products/domain/entity/product_entity.dart';
 import 'package:dartz/dartz.dart';
+import 'package:store_app/core/error/failure.dart';
+import 'package:store_app/features/products/data/models/category_model.dart';
+import 'package:store_app/features/products/domain/entity/category_entity.dart';
+import 'package:store_app/features/products/domain/entity/image_entity.dart';
+import 'package:store_app/features/products/domain/entity/product_entity.dart';
 
 import '../../data/models/product_model.dart';
 import '../entity/app_image_entity.dart';
