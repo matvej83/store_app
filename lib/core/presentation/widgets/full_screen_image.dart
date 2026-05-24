@@ -33,6 +33,7 @@ class FullScreenImage extends StatelessWidget {
           top: 0,
           right: 0,
           child: IconButton(
+            style: IconButton.styleFrom(backgroundColor: Colors.transparent),
             onPressed: () {
               context.pop();
             },

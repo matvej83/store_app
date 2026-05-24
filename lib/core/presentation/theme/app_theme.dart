@@ -172,7 +172,7 @@ class AppTheme {
       elevation: 2,
     ),
     searchBarTheme: SearchBarThemeData(
-      backgroundColor: WidgetStateProperty.all(appColors.unselectedWidget),
+      backgroundColor: WidgetStateProperty.all(appColors.iconButtonBackground),
       shadowColor: WidgetStateProperty.all(appColors.surfaceTint),
       elevation: WidgetStateProperty.all(0),
       surfaceTintColor: WidgetStateProperty.all(appColors.surfaceTint),
@@ -360,7 +360,7 @@ class AppTheme {
       elevation: 2,
     ),
     searchBarTheme: SearchBarThemeData(
-      backgroundColor: WidgetStateProperty.all(appColors.unselectedWidget),
+      backgroundColor: WidgetStateProperty.all(appColors.iconButtonBackground),
       shadowColor: WidgetStateProperty.all(appColors.surfaceTint),
       elevation: WidgetStateProperty.all(0),
       surfaceTintColor: WidgetStateProperty.all(appColors.surfaceTint),

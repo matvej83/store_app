@@ -47,6 +47,7 @@ class _ProductsPageState extends State<ProductsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return BlocBuilder<ProductsBloc, ProductsState>(
       builder: (context, state) {
         return state.isLoading
@@ -69,9 +70,9 @@ class _ProductsPageState extends State<ProductsPage> {
                                 child: SizedBox(
                                   height: 40.0,
                                   child: SearchBar(
-                                    leading: const Icon(
+                                    leading: Icon(
                                       Icons.search,
-                                      color: Colors.white,
+                                      color: theme.colorScheme.onPrimary,
                                     ),
                                     onTapOutside: (PointerDownEvent event) {
                                       FocusManager.instance.primaryFocus

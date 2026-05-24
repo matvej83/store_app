@@ -48,6 +48,9 @@ class _MainScreenState extends State<MainScreen> {
         centerTitle: true,
         leading: MainScreenUtils.showBackButton(context)
             ? BackButton(
+                style: IconButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                ),
                 onPressed: () {
                   if (context.canPop()) {
                     context.pop();
