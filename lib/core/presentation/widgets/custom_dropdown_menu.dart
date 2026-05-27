@@ -38,6 +38,8 @@ class CustomDropdownMenu<T> extends StatelessWidget {
         leadingIcon: leadingIcon,
         trailingIcon: trailingIcon,
         selectedTrailingIcon: selectedTrailingIcon,
+        requestFocusOnTap: false,
+        selectOnly: true,
       ),
     );
   }
