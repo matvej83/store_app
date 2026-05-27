@@ -28,35 +28,30 @@ class AppRouter {
   final AuthBloc authBloc;
 
   late final GoRouter router = GoRouter(
-    initialLocation: Pages.splash,
+    overridePlatformDefaultLocation: false,
     navigatorKey: _rootNavigatorKey,
     refreshListenable: GoRouterRefreshStream(authBloc.stream),
     debugLogDiagnostics: true,
     redirect: (context, state) {
       final status = authBloc.state.status;
 
-      final isPublic = isPublicRoute(state);
       final isLogin = state.matchedLocation == Pages.login;
       final isSplash = state.matchedLocation == Pages.splash;
 
+      // auth is loading
       if (status == AuthStatus.unknown) {
-        if (isSplash) return null;
-
-        final from = state.uri.toString();
-        return '${Pages.splash}?from=$from';
+        return isSplash ? null : Pages.splash;
       }
 
+      // user is not authorized
       if (status == AuthStatus.unauthenticated) {
-        if (isPublic || isLogin) return null;
-
-        final from = state.uri.toString();
-        return '${Pages.login}?from=$from';
+        return isLogin ? null : Pages.login;
       }
 
+      // user is authorized
       if (status == AuthStatus.authenticated) {
-        if (isSplash || isLogin) {
-          final from = state.uri.queryParameters['from'];
-          return from ?? Pages.products;
+        if (isLogin || isSplash) {
+          return Pages.products;
         }
 
         return null;
