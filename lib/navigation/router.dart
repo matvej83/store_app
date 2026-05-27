@@ -36,21 +36,17 @@ class AppRouter {
       final status = authBloc.state.status;
 
       final isLogin = state.matchedLocation == Pages.login;
-      final isSplash = state.matchedLocation == Pages.splash;
 
-      // auth is loading
       if (status == AuthStatus.unknown) {
-        return isSplash ? null : Pages.splash;
+        return null;
       }
 
-      // user is not authorized
       if (status == AuthStatus.unauthenticated) {
         return isLogin ? null : Pages.login;
       }
 
-      // user is authorized
       if (status == AuthStatus.authenticated) {
-        if (isLogin || isSplash) {
+        if (isLogin) {
           return Pages.products;
         }
 
