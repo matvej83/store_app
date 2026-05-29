@@ -28,6 +28,7 @@ class AppRouter {
   final AuthBloc authBloc;
 
   late final GoRouter router = GoRouter(
+    initialLocation: Pages.splash,
     overridePlatformDefaultLocation: false,
     navigatorKey: _rootNavigatorKey,
     refreshListenable: GoRouterRefreshStream(authBloc.stream),
@@ -36,6 +37,7 @@ class AppRouter {
       final status = authBloc.state.status;
 
       final isLogin = state.matchedLocation == Pages.login;
+      final isSplash = state.matchedLocation == Pages.splash;
 
       if (status == AuthStatus.unknown) {
         return null;
@@ -46,10 +48,9 @@ class AppRouter {
       }
 
       if (status == AuthStatus.authenticated) {
-        if (isLogin) {
+        if (isSplash || isLogin) {
           return Pages.products;
         }
-
         return null;
       }
 
